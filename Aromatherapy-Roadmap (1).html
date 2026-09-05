@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نقشه راه ۳ ساله آروماتراپی — از صفر تا پرکتیشنر حرفه‌ای</title>
+<style>
+:root{--bg:#14101d;--card:#1f1830;--card2:#2b2144;--line:#4a3d78;--tx:#ece8f8;--mut:#a89ccf;
+--acc:#b79cff;--acc2:#d9ccff;--gold:#fbbf24;--green:#6fe3a5;}
+*{box-sizing:border-box;scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:'Vazirmatn','Segoe UI',Tahoma,sans-serif;line-height:1.85;direction:rtl;padding-bottom:90px;}
+.wrap{max-width:1020px;margin:0 auto;padding:24px 16px 80px;}
+header.hero{background:linear-gradient(135deg,#5b21b6,#7c3aed 55%,#3b0764);border-radius:20px;padding:30px 26px;color:#fff;margin-bottom:22px;box-shadow:0 10px 40px rgba(124,58,237,.30);}
+header.hero h1{margin:0 0 8px;font-size:26px;}
+header.hero p{margin:4px 0;opacity:.95;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px;}
+.chip{background:rgba(255,255,255,.18);padding:5px 13px;border-radius:999px;font-size:13px;font-weight:600;}
+.btn{display:inline-block;background:linear-gradient(90deg,#c4b5fd,#8b5cf6);color:#1e1033;font-weight:800;padding:11px 22px;border-radius:999px;text-decoration:none;font-size:15px;border:none;cursor:pointer;font-family:inherit;}
+.btn.ghost{background:var(--card2);color:var(--acc2);border:1px solid var(--line);}
+.btn:hover{filter:brightness(1.12);}
+.btn.small{padding:7px 14px;font-size:13px;}
+.view{display:none;}
+.view.active{display:block;}
+.home-menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:6px;}
+.mcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;cursor:pointer;transition:.15s;}
+.mcard:hover{border-color:var(--acc);transform:translateY(-3px);}
+.mcard .mc-icon{font-size:34px;}
+.mcard .mc-title{font-size:18px;font-weight:800;color:#fff;margin:8px 0 4px;}
+.mcard .mc-desc{color:var(--mut);font-size:13.5px;}
+.section-label{color:var(--acc);font-weight:800;font-size:16px;margin:26px 0 12px;display:block;}
+.phases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
+.pcard{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--acc);border-radius:16px;padding:22px;cursor:pointer;transition:.15s;position:relative;}
+.pcard:hover{transform:translateY(-3px);}
+.pc1{border-top-color:#b79cff}.pc1:hover{border-color:#b79cff}
+.pc2{border-top-color:#6fe3a5}.pc2:hover{border-color:#6fe3a5}
+.pc3{border-top-color:#fbbf24}.pc3:hover{border-color:#fbbf24}
+.pc4{border-top-color:#f9a8d4}.pc4:hover{border-color:#f9a8d4}
+.pc5{border-top-color:#7dd3fc}.pc5:hover{border-color:#7dd3fc}
+.pc6{border-top-color:#fdba74}.pc6:hover{border-color:#fdba74}
+.pcard-title{font-size:17px;font-weight:800;color:#fff;}
+.pcard-range{color:var(--mut);font-size:13px;margin:6px 0 12px;}
+.pcard-go{color:var(--acc2);font-weight:700;font-size:13.5px;}
+.phase-top{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--acc);border-radius:16px;padding:20px 24px;margin-bottom:16px;display:flex;flex-wrap:wrap;align-items:center;gap:14px;}
+.phase-title{font-size:21px;font-weight:800;color:#fff;flex:1;min-width:200px;}
+.phase-range{color:var(--mut);font-size:13px;width:100%;}
+.monthbar{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:12px 18px;margin-bottom:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.monthbar-tip{color:var(--mut);font-size:13px;flex:1;}
+.phase-intro{color:var(--mut);}
+.month-pane{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:16px;}
+.accordion{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:14px;overflow:hidden;}
+.acc-head{width:100%;background:var(--card2);color:#fff;border:none;padding:14px 18px;font-size:16px;font-weight:800;font-family:inherit;cursor:pointer;text-align:right;display:flex;align-items:center;gap:12px;}
+.acc-head:hover{background:#372c5c;}
+.acc-arrow{color:var(--acc2);transition:transform .2s;}
+.acc-label{flex:1;color:var(--gold);}
+.acc-state{font-size:12px;background:#0d0917;color:var(--mut);padding:3px 12px;border-radius:999px;}
+.accordion .acc-body{display:none;padding:18px 22px;}
+.accordion.open .acc-body{display:block;}
+.accordion.open .acc-arrow{transform:rotate(90deg);}
+.accordion.open .acc-state{color:var(--green);}
+.phase-bottom{display:flex;gap:10px;margin-top:10px;}
+h1.doc-title{font-size:22px;color:#fff;margin:10px 0 14px;padding-bottom:10px;border-bottom:2px solid var(--acc);}
+h2{color:var(--acc);font-size:20px;margin:24px 0 10px;padding-top:8px;border-top:1px solid var(--line);}
+h3{color:var(--green);font-size:16px;margin:18px 0 8px;background:var(--card2);padding:8px 13px;border-radius:8px;border-right:4px solid var(--acc);}
+p{margin:6px 0;}
+strong{color:#fff;}
+code{background:#0d0917;color:var(--acc2);padding:1px 6px;border-radius:5px;font-size:.9em;}
+hr{border:none;border-top:1px dashed var(--line);margin:16px 0;}
+blockquote{background:var(--card2);border-right:4px solid var(--gold);padding:10px 16px;border-radius:8px;margin:10px 0;color:var(--mut);}
+table{width:100%;border-collapse:collapse;margin:10px 0 14px;font-size:13.5px;display:block;overflow-x:auto;}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:right;vertical-align:top;}
+th{background:#0d0917;color:var(--acc2);font-weight:700;white-space:nowrap;}
+tr:nth-child(even) td{background:#191426;}
+footer.footer{text-align:center;color:var(--mut);font-size:13px;margin-top:14px;padding:20px;border-top:1px solid var(--line);}
+@media print{ .btn,.view{display:none!important;} }
+/* ═══════════ هدر ثابت ═══════════ */
+.topbar{position:sticky;top:0;z-index:50}
+.deheader{background:linear-gradient(160deg,#1e1033 0%,#5b21b6 45%,#7c3aed 100%);color:#fff;padding:0;box-shadow:0 4px 20px rgba(0,0,0,.45)}
+.hin{padding:7px 12px 6px;position:relative;overflow:hidden}
+.hin::after{content:'';position:absolute;left:-40px;top:-60px;width:190px;height:190px;background:radial-gradient(circle,rgba(255,255,255,.13),transparent 68%);border-radius:50%}
+.hr{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;position:relative;z-index:2}
+.hleft{flex:1 1 auto;min-width:0;overflow:hidden}
+.dnum{font-size:19px;font-weight:800;line-height:1.05;letter-spacing:-.3px}
+.dmeta{margin-top:4px;display:flex;flex-direction:column;align-items:flex-start}
+.cal{display:inline-flex;align-items:center;gap:8px;width:auto;flex:0 0 auto;align-self:flex-start;background:rgba(255,255,255,.17);border:1.5px solid rgba(255,255,255,.3);border-radius:9px;padding:4px 9px 4px 8px;box-shadow:0 2px 7px rgba(0,0,0,.14)}
+.cal .cd{font-size:20px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.cal .cx{display:flex;flex-direction:column;line-height:1.25}
+.cal .cm{font-size:12.5px;font-weight:800}
+.cal .cw{font-size:11px;font-weight:800;opacity:.95;background:rgba(255,255,255,.22);border-radius:6px;padding:1px 7px;margin-left:6px}
+.cal.today .cw{background:rgba(13,59,30,.22)}
+.cal .cy{font-size:10px;opacity:.8;font-weight:700}
+.cal .cg{font-size:9.5px;opacity:.68;font-weight:600;direction:ltr;margin-top:1px;letter-spacing:.2px}
+.cal.today{background:rgba(111,227,165,.22);border-color:rgba(140,240,190,.65);box-shadow:0 2px 10px rgba(60,200,110,.28)}
+.cal .tdb{background:#6fe3a5;color:#06281a;font-size:8.5px;font-weight:800;border-radius:5px;padding:1px 5px;margin-right:5px}
+.syn{display:block;font-size:9.5px;opacity:.62;font-weight:700;text-align:left;min-height:0;line-height:1.5;position:relative;z-index:3}
+.syn:empty{display:none}
+.dmeta .l2{display:block;opacity:.82;font-size:11px;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.picks{flex:0 0 112px;width:112px}
+.picks .pick{display:block;width:100%;margin-bottom:3px}
+.picks .pick:last-child{margin-bottom:0}
+.pick.bday{font-size:10.5px;padding:4px 4px;color:#fff}
+.pick{background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.34);border-radius:9px;padding:5px 8px;font-size:12px;font-weight:800;white-space:nowrap;color:#fff;font-family:inherit;cursor:pointer;text-align:center;line-height:1.25;transition:.15s}
+.pick:active{background:rgba(255,255,255,.32);transform:scale(.97)}
+.pick .ar{opacity:.75;font-size:9px;margin-left:4px}
+.pick .pv{font-weight:800}
+.pwrap{display:flex;align-items:center;gap:8px;margin-top:6px;position:relative;z-index:2}
+.prog{flex:1;height:5px;background:rgba(0,0,0,.22);border-radius:3px;overflow:hidden;box-shadow:inset 0 1px 2px rgba(0,0,0,.25)}
+.prog i{display:block;height:100%;border-radius:4px;transition:.4s;background:linear-gradient(90deg,#6fe3a5,#b7f4d4)}
+.ppc{font-size:11.5px;font-weight:800;opacity:.95;min-width:38px;text-align:left;font-variant-numeric:tabular-nums}
+.jump{position:fixed;bottom:0;right:0;left:0;background:#1e1033;color:#fff;padding:9px 10px;display:flex;flex-wrap:wrap;gap:7px;align-items:center;z-index:60;box-shadow:0 -3px 14px rgba(0,0,0,.45)}
+.jump input{flex:1;min-width:0;padding:9px;border:none;border-radius:8px;font-family:inherit;font-size:15px;text-align:center;font-weight:700;color:#0b1220}
+.jump button{background:#6d28d9;color:#fff;border:none;padding:9px 12px;border-radius:8px;font-family:inherit;font-size:13px;font-weight:800;cursor:pointer}
+.jump .today{background:#2e9e6b}
+.jump .cog{background:#4c1d95;padding:9px 11px;font-size:16px}
+.jump .exp{background:#7c3aed;font-size:12px;padding:8px 9px}
+.jump .imp{background:#b45309;font-size:12px;padding:8px 9px}
+.stat{font-size:11.5px;opacity:.9;white-space:nowrap;width:100%;text-align:left;margin-top:2px}
+dialog textarea{width:100%;min-height:160px;max-height:40vh;background:#0d0917;color:#d9ccff;border:2px solid var(--line);border-radius:10px;font-family:monospace,monospace;font-size:11px;padding:9px;direction:ltr;text-align:left;resize:vertical;margin-bottom:10px;box-sizing:border-box}
+.bmsg{font-size:12px;font-weight:700;color:var(--green);min-height:18px;text-align:center;margin-top:4px}
+.bmsg.err{color:#f87171}
+.totop{position:fixed;bottom:76px;left:14px;z-index:70;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#c026d3);color:#fff;border:none;font-size:21px;font-weight:800;display:none;align-items:center;justify-content:center;box-shadow:0 5px 16px rgba(0,0,0,.45);cursor:pointer;opacity:.97;transition:.2s;padding:0}
+.totop.show{display:flex}
+.totop:active{transform:scale(.92)}
+.totop::before{content:'▲';font-size:15px}
+.tdchk{width:30px;text-align:center;vertical-align:middle;border-left:1px solid var(--line)!important}
+.tk{display:inline-flex;width:20px;height:20px;border:2px solid var(--line);border-radius:6px;align-items:center;justify-content:center;color:transparent;font-size:12px;font-weight:800;background:#0d0917;transition:.15s;flex:0 0 auto}
+tr[data-k]{cursor:pointer}
+tr[data-k]:hover td{background:#2a2144!important}
+tr.done td{opacity:.55}
+tr.done .tk{background:var(--green);border-color:var(--green);color:#06281a}
+tr.done td:first-child{opacity:1}
+.acc-body h3.daypart{background:rgba(251,191,36,.22);color:#fcd34d;border-right-color:#d97706}
+.acc-body h3.daydone{background:linear-gradient(90deg,#fbbf24,#f59e0b);color:#4d2d00;border-right-color:#b45309;box-shadow:0 0 0 1.5px #d97706 inset}
+.acc-body h3.daydone::after{content:' ✓ کامل';font-size:.8em;font-weight:800}
+.acc-body h2.weekdone{background:linear-gradient(90deg,#fbbf24,#f59e0b);color:#4d2d00;border-right:4px solid #b45309;box-shadow:0 0 0 1.5px #d97706 inset}
+.acc-body h2.weekdone::after{content:' ✓ کامل';font-size:.8em;font-weight:800}
+.accordion.monthdone .acc-head{background:linear-gradient(90deg,#fbbf24,#f59e0b);color:#4d2d00}
+.accordion.monthdone .acc-label{color:#4d2d00}
+.accordion.monthdone .acc-label::after{content:' ✓';font-weight:800}
+.accordion.monthdone .acc-arrow{color:#4d2d00}
+.accordion.monthdone .acc-state{background:#b45309;color:#fff}
+.pcard.pcard-done{border-color:#fbbf24;background:linear-gradient(180deg,rgba(251,191,36,.16),rgba(180,83,9,.07));box-shadow:0 0 0 1.5px #d97706 inset}
+.pcard.pcard-done .pcard-title{color:#fbbf24}
+.pcard.pcard-done::after{content:'✓';position:absolute;top:10px;left:12px;background:#fbbf24;color:#4d2d00;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+.prow.prow-done{border-color:#fbbf24;background:rgba(251,191,36,.12)}
+.prow.prow-done .pid{background:#fbbf24;color:#4d2d00}
+dialog{border:none;border-radius:15px;padding:0;max-width:94vw;width:400px;box-shadow:0 10px 44px rgba(0,0,0,.6);background:var(--card);color:var(--tx)}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+dialog h3{margin:0;background:linear-gradient(135deg,#5b21b6,#7c3aed);color:#fff;padding:14px;font-size:16.5px;border-radius:15px 15px 0 0}
+.dc{padding:12px;max-height:64vh;overflow:auto}
+dialog button.cl{width:100%;padding:13px;border:none;background:var(--card2);color:#cbd5e1;font-family:inherit;font-size:15px;font-weight:800;border-radius:0 0 15px 15px;cursor:pointer}
+.fhead{background:var(--card2);border:2px solid var(--line);border-radius:10px;padding:9px 11px;margin-bottom:10px;font-size:12.5px;color:var(--tx);font-weight:800;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.prow{display:flex;gap:10px;align-items:center;padding:11px;margin-bottom:8px;border:2px solid var(--line);border-radius:11px;cursor:pointer;background:var(--card)}
+.prow:active{background:#2b2144}
+.prow.cur{border-color:var(--green);background:rgba(111,227,165,.12)}
+.pid{flex:0 0 auto;width:42px;height:42px;border-radius:11px;background:var(--acc);color:#1e1033;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px}
+.prow.cur .pid{background:var(--green)}
+.pnm{font-weight:800;font-size:14.5px;color:#fff}
+.psub{font-size:11.5px;color:var(--mut);margin-top:2px}
+.pbar{height:5px;background:#0d0917;border-radius:3px;margin-top:5px;overflow:hidden}
+.pbar i{display:block;height:100%;background:var(--green);border-radius:3px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.gi{border:2px solid var(--line);border-radius:10px;padding:9px 3px;text-align:center;cursor:pointer;background:var(--card);font-family:inherit;color:var(--tx)}
+.gi:active{background:#2b2144}
+.gi.cur{border-color:var(--green);background:rgba(111,227,165,.12)}
+.gi b{display:block;font-size:15px;color:#fff;font-weight:800}
+.gi span{font-size:10px;color:var(--mut)}
+.gi small{font-size:9px;color:var(--acc2)}
+.gi.cur b{color:var(--green)}
+.fld{margin-bottom:14px}
+.fld label{display:block;font-size:13px;font-weight:800;color:var(--acc2);margin-bottom:6px}
+.fld input,.fld select{width:100%;padding:11px;border:2px solid var(--line);border-radius:10px;font-family:inherit;font-size:15px;text-align:center;font-weight:700;background:#0d0917;color:var(--tx)}
+.dsp{display:flex;gap:6px}
+.dsp select{flex:1}
+.bsave{width:100%;padding:13px;border:none;background:#217346;color:#fff;border-radius:11px;font-family:inherit;font-size:15.5px;font-weight:800;margin-top:4px;cursor:pointer}
+.note{background:rgba(251,191,36,.12);border-right:4px solid var(--gold);padding:9px 11px;border-radius:8px;font-size:12.5px;color:#fcd34d;margin-bottom:12px;line-height:1.7}
+.home-hero{background:linear-gradient(135deg,#5b21b6,#7c3aed 55%,#3b0764);border-radius:20px;padding:22px 24px;color:#fff;margin-bottom:20px;box-shadow:0 10px 40px rgba(124,58,237,.30)}
+.home-hero h1{margin:0 0 6px;font-size:23px}
+.home-hero p{margin:3px 0;opacity:.95;font-size:14px}
+.home-hero .chips{margin-top:12px}
+@media(max-width:420px){.picks{flex:0 0 96px;width:96px}.pick{font-size:11px;padding:5px 4px}}
+</style>
+</head>
+<body>
+<div class="topbar" id="topbar">
+<header class="deheader"><div class="hin">
+  <div class="hr">
+    <div class="hleft">
+      <div class="dnum" id="dn">روز ۱</div>
+      <div class="dmeta" id="dm"></div>
+    </div>
+    <div class="picks">
+      <button class="pick" id="bph" onclick="pickPh()">فاز<span class="ar">▾</span></button>
+      <button class="pick" id="bmo" onclick="pickMo()">ماه<span class="ar">▾</span></button>
+      <button class="pick" id="bwk" onclick="pickWk()">هفته<span class="ar">▾</span></button>
+      <button class="pick bday" id="bday" onclick="pickDay()">روز<span class="ar">▾</span></button>
+    </div>
+  </div>
+  <div class="pwrap"><div class="prog"><i id="pb"></i></div><span class="ppc" id="ppc"></span></div>
+  <span class="syn" id="syn"></span>
+</div></header>
+</div>
+<dialog id="dPh"><h3>📅 انتخاب فاز</h3><div class="dc" id="dcPh"></div><button class="cl" onclick="dPh.close()">بستن</button></dialog>
+<dialog id="dMo"><h3>📆 انتخاب ماه</h3><div class="dc" id="dcMo"></div><button class="cl" onclick="dMo.close()">بستن</button></dialog>
+<dialog id="dWk"><h3>🗓️ انتخاب هفته</h3><div class="dc" id="dcWk"></div><button class="cl" onclick="dWk.close()">بستن</button></dialog>
+<dialog id="dDay"><h3>📅 انتخاب روز</h3><div class="dc" id="dcDay"></div><button class="cl" onclick="dDay.close()">بستن</button></dialog>
+<dialog id="dSet"><h3>⚙ تنظیمات تقویم</h3><div class="dc">
+  <div class="note" style="background:rgba(183,156,255,.12);border-right-color:#b79cff;color:#d9ccff"><b>مهم:</b> ریتم این نقشه راه بر پایه <b>شنبه = شروع هفته</b> بسته شده (شنبه = تئوری · یکشنبه = بویایی · دوشنبه = روغن · سه‌شنبه = استراحت · چهارشنبه = عملی · پنجشنبه = مرور · جمعه = سبک). به‌صورت پیش‌فرض روز ۱ روی <b>نزدیک‌ترین شنبه</b> تنظیم شده است. اگر تاریخ شروع را تغییر می‌دهید، حتماً یک <b>شنبه</b> انتخاب کنید.</div>
+  <div class="note">تقویم هدر تاریخِ <b>همان روزِ بازِ پلن</b> را نشان می‌دهد؛ اگر آن روز واقعاً امروز باشد، برچسب «امروز» می‌گیرد. با تغییر تاریخ شروع، نام روزهای هفته‌ی هر ۱۰۹۲ روز دوباره محاسبه می‌شود.</div>
+  <div style="font-size:11px;color:var(--mut);margin-bottom:14px;line-height:1.8">
+    🟠 کهربایی = بخشی از قدم‌های روز انجام شده<br>
+    🟡 زرد «✓ کامل» = همه‌ی قدم‌های روز انجام شده<br>
+    🔄 آبشار: همه‌ی روزهای هفته ← هفته زرد · همه‌ی هفته‌های ماه ← ماه زرد · همه‌ی ماه‌های فاز ← کارت فاز زرد.
+  </div>
+  <div class="fld"><label>📅 تاریخ شروع (شمسی)</label>
+    <div class="dsp"><select id="sY"></select><select id="sM"></select><select id="sD"></select></div>
+  </div>
+  <div class="fld"><label>🗓️ روز شروع هفته</label>
+    <select id="sW">
+      <option value="0">شنبه (پیش‌فرض)</option>
+      <option value="1">یکشنبه</option><option value="2">دوشنبه</option>
+      <option value="3">سه‌شنبه</option><option value="4">چهارشنبه</option>
+      <option value="5">پنج‌شنبه</option><option value="6">جمعه</option>
+    </select>
+  </div>
+  <button class="bsave" style="background:#7c3aed" onclick="setStartToday()">📅 تاریخ شروع = امروز</button>
+  <button class="bsave" style="margin-top:6px" onclick="saveSet()">ذخیره</button>
+  <button class="bsave" style="background:#C00000;margin-top:8px" onclick="clearTasks()">🗑 پاک کردن همه تیک‌ها</button>
+</div><button class="cl" onclick="dSet.close()">بستن</button></dialog>
+<div class="jump">
+  <button class="today" onclick="goToday()">امروز</button>
+  <input id="ji" type="number" min="1" max="1092" placeholder="روز (۱–۱۰۹۲)">
+  <button onclick="jump()">برو</button>
+  <button class="cog" onclick="openSet()">⚙</button>
+  <button class="exp" onclick="exportBackup()">📤 Export</button>
+  <button class="imp" onclick="importBackup()">📥 Import</button>
+  <span class="stat" id="st"></span>
+</div>
+<dialog id="dExp"><h3>📤 بکاپ JSON</h3><div class="dc">
+  <div class="note">اسم فایل دانلود با تاریخ شمسی است (مثلاً <span style="direction:ltr;display:inline-block" id="expFname">AR-backup-1405-01-01.json</span>). متن بکاپ را با «📋 کپی» کپی کنید و در یک فایل .json ذخیره کنید، یا با «⬇ دانلود فایل» مستقیم دانلود کنید.</div>
+  <textarea id="expTxt" readonly spellcheck="false"></textarea>
+  <button class="bsave" style="background:#7c3aed" onclick="copyBackup()">📋 کپی بکاپ</button>
+  <button class="bsave" style="background:#6d28d9;margin-top:6px" onclick="dlBackup()">⬇ دانلود فایل</button>
+  <div class="bmsg" id="expMsg"></div>
+</div><button class="cl" onclick="dExp.close()">بستن</button></dialog>
+<dialog id="dImp"><h3>📥 ورود بکاپ</h3><div class="dc">
+  <div class="note">یک فایل JSON بکاپ را انتخاب کنید، یا متن بکاپ را در کادر زیر بچسبانید و «📥 وارد کردن» را بزنید.</div>
+  <button class="bsave" style="background:#b45309" onclick="document.getElementById('impFile2').click()">📁 انتخاب فایل JSON</button>
+  <input type="file" id="impFile2" accept=".json,application/json" style="display:none">
+  <textarea id="impTxt" spellcheck="false" placeholder="متن JSON بکاپ را اینجا بچسبانید..."></textarea>
+  <button class="bsave" style="background:#217346;margin-top:6px" onclick="applyImportText()">📥 وارد کردن</button>
+  <div class="bmsg" id="impMsg"></div>
+</div><button class="cl" onclick="dImp.close()">بستن</button></dialog>
+<div class="wrap">
+<section class="view active" id="view-home">
+<div class="home-hero">
+  <h1>🌿 نقشه راه ۳ ساله آروماتراپی</h1>
+  <p>از صفر مطلق تا پرکتیشنر حرفه‌ای آماده گواهی — شخصی، علمی، ایمن</p>
+  <div class="chips">
+    <span class="chip">🎯 شخصی → حرفه‌ای</span><span class="chip">📅 ۶ فاز × ۱۰۹۲ روز</span>
+    <span class="chip">⏱ ~۵ ساعت در هفته</span><span class="chip">🧪 ۳۰ روغن + فرمولاسیون</span>
+    <span class="chip">🛡 ایمنی‌محور</span>
+  </div>
+</div>
+<blockquote style="border-right-color:#f87171;color:#fca5a5">
+<strong>⚠️ هشدار ایمنی:</strong> اسانس‌ها ترکیبات غلیظ و قدرتمندند — «طبیعی» یعنی «بی‌خطر» نیست.
+هرگز اسانس خالص روی پوست نزنید، مصرف خوراکی خودسرانه ممنوع، در بارداری/کودکان/حیوانات فقط طبق پروتکل.
+این یک مسیر <strong>آموزشی</strong> است — نه توصیه پزشکی و نه قول درمان.
+</blockquote>
+<span class="section-label">📘 شروع از اینجا</span>
+<div class="home-menu">
+  <div class="mcard" onclick="showView('view-resources')"><div class="mc-icon">📚</div><div class="mc-title">منابع</div><div class="mc-desc">کتاب‌ها و منابع تحقیق‌شده + قوانین استفاده</div></div>
+  <div class="mcard" onclick="showView('view-macro')"><div class="mc-icon">🗺</div><div class="mc-title">ماکرو نقشه راه</div><div class="mc-desc">فازها، گیت‌ها، ریتم هفتگی، ۸۰/۲۰</div></div>
+  <div class="mcard" onclick="showView('view-safety')"><div class="mc-icon">🛡</div><div class="mc-title">ایمنی فوری</div><div class="mc-desc">مرجع سریع رقیق‌سازی و موارد منع — همیشه در دسترس</div></div>
+</div>
+<span class="section-label">📅 فازهای تقویم</span>
+<div class="phases-grid">
+  <div class="pcard pc1" onclick="openPhase('p1')"><div class="pcard-title">فاز ۱ — ریشه‌ها</div><div class="pcard-range">روز ۱ تا ۱۱۲ · صفر ← پایه قوی (L0+L1)</div><div class="pcard-go">مشاهده فاز ←</div></div>
+  <div class="pcard pc2" onclick="openPhase('p2')"><div class="pcard-title">فاز ۲ — پرکتیشنر</div><div class="pcard-range">روز ۱۱۳ تا ۲۲۴ · پایه ← سازنده (L2)</div><div class="pcard-go">مشاهده فاز ←</div></div>
+  <div class="pcard pc3" onclick="openPhase('p3')"><div class="pcard-title">فاز ۳ — پیشرفته</div><div class="pcard-range">روز ۲۲۵ تا ۳۹۲ · سازنده ← متخصص ایمنی (L3)</div><div class="pcard-go">مشاهده فاز ←</div></div>
+  <div class="pcard pc4" onclick="openPhase('p4')"><div class="pcard-title">فاز ۴ — حرفه‌ای</div><div class="pcard-range">روز ۳۹۳ تا ۶۱۶ · متخصص ← پرکتیشنر مسئول (L4)</div><div class="pcard-go">مشاهده فاز ←</div></div>
+  <div class="pcard pc5" onclick="openPhase('p5')"><div class="pcard-title">فاز ۵ — گواهی و تخصص</div><div class="pcard-range">روز ۶۱۷ تا ۸۱۲ · آزمون ARC + دیپلم IFPA</div><div class="pcard-go">مشاهده فاز ←</div></div>
+  <div class="pcard pc6" onclick="openPhase('p6')"><div class="pcard-title">فاز ۶ — لانچ</div><div class="pcard-range">روز ۸۱۳ تا ۱۰۹۲ · پورتفولیو ← شروع حرفه‌ای</div><div class="pcard-go">مشاهده فاز ←</div></div>
+</div>
+</section>
+<section class="view" id="view-resources">
+<div class="phase-top"><button class="btn ghost" onclick="showHome()">→ بازگشت به صفحه اصلی</button><div class="phase-title">📚 منابع</div></div>
+<div class="month-pane"><h1 class="doc-title">✅ منابع تحقیق‌شده (Resource Stack)</h1>
+<p><strong>پروفایل اعمال‌شده:</strong> صفر مطلق · هدف ترکیبی (شخصی + حرفه‌ای) · فارسی + انگلیسی ساده · بودجه متوسط · اروپا + ایران</p>
+<blockquote><strong>قانون سلسله‌مراتب:</strong> ادعای علمی/ایمنی فقط از Tier 1 و ۲ (مقالات، Cochrane ،NCCIH ،Tisserand). سایت تجاری و اینستاگرام هرگز مبنای ادعا نیست. هر چیزی که تأیید نشد، برچسب <code>Not verified</code> می‌گیرد.</blockquote>
+<h2>❌ چیزهایی که رد شدند</h2>
+<table><thead><tr><th>گزینه</th><th>چرا رد شد</th><th>جایگزین</th></tr></thead><tbody>
+<tr><td>حفظ‌کردن ۲۰۰+ روغن</td><td>حافظه‌محوری بدون مهارت؛ فرسودگی</td><td>تسلط عمیق روی ۳۰ روغن (Mastery)</td></tr>
+<tr><td>شروع با Rhind ویراست ۲۰۱۲</td><td>ویراست ۳ (۲۰۱۹) جدیدتر است</td><td>S3 ویراست ۳</td></tr>
+<tr><td>ایمنیِ کتاب Worwood به‌تنهایی</td><td>قدیمی و ناقص است</td><td>همیشه کراس‌چک با S2</td></tr>
+<tr><td>دستورهای اینستاگرامی بدون منبع</td><td>Tier 4؛ ریسک ایمنی</td><td>فرمول‌های مستند خودت</td></tr>
+<tr><td>کیت ۵۰تایی روغن ارزان</td><td>کیفیت نامشخص؛ اکسیداسیون</td><td>خرید مرحله‌ای ۵تایی با COA</td></tr>
+<tr><td>مصرف خوراکی خودسرانه</td><td>اختلاف مکاتب + ریسک سمیت</td><td>فقط زیر نظر متخصص</td></tr>
+</tbody></table>
+<h2>✅ ست نهایی منابع — کل نقشه راه فقط به این کدها ارجاع می‌دهد</h2>
+<table><thead><tr><th>کد</th><th>منبع</th><th>نوع</th><th>اعتبار</th><th>برای چه</th><th>کجای مسیر</th></tr></thead><tbody>
+<tr><td><strong>S1</strong></td><td>Worwood — Complete Book (ویراست ۲۰۱۶)</td><td>کتاب</td><td>Tier 3</td><td>دستورها + پروفایل پایه</td><td>L1–L2 (گزیده)</td></tr>
+<tr><td><strong>S2</strong></td><td>Tisserand و Young — Essential Oil Safety (ویراست ۲، ۲۰۱۳)</td><td>کتاب مرجع</td><td>Tier 2 🏆</td><td>حد پوستی + سم‌شناسی</td><td>L2–L4 (مرجع میز)</td></tr>
+<tr><td><strong>S3</strong></td><td>Rhind — Handbook (ویراست ۳، ۲۰۱۹)</td><td>کتاب</td><td>Tier 2</td><td>سینرژی + فارماکولوژی</td><td>L2–L3 (گزیده)</td></tr>
+<tr><td><strong>S4</strong></td><td>Price — Health Professionals (ویراست ۴، ۲۰۱۱)</td><td>کتاب</td><td>Tier 2</td><td>کاربرد بالینی + بارداری</td><td>L3 (گزیده)</td></tr>
+<tr><td><strong>S5</strong></td><td>Keville و Green (۲۰۱۲)</td><td>کتاب</td><td>Tier 3</td><td>فرمول‌های آرایشی</td><td>L2 (مرجع)</td></tr>
+<tr><td><strong>S6</strong></td><td>ترجمه فارسی Shutes و Galper</td><td>کتاب فارسی</td><td>Tier 3–4</td><td>شروع فارسی</td><td>L0–L1 (با احتیاط)</td></tr>
+<tr><td><strong>S7</strong></td><td>جدول رقیق‌سازی Tisserand Institute</td><td>وب رایگان</td><td>Tier 2</td><td>مرجع روزانه درصدها</td><td>کل مسیر</td></tr>
+<tr><td><strong>S8</strong></td><td>NCCIH + NCI PDQ</td><td>وب رایگان</td><td>Tier 1–2</td><td>نگاه علمی محتاطانه</td><td>L0–L3</td></tr>
+<tr><td><strong>S9</strong></td><td>PubMed + چکیده‌های Cochrane</td><td>دیتابیس رایگان</td><td>Tier 1</td><td>پژوهش و نقد مقاله</td><td>L3 به بعد</td></tr>
+<tr><td><strong>S10</strong></td><td>NAHA / AIA / IFPA + CosIng و CPNP</td><td>وب نهادها</td><td>Tier 2</td><td>گواهی + قانون محصول EU</td><td>L4 به بعد</td></tr>
+</tbody></table>
+<h2>🛒 نقشه خرید مرحله‌ای</h2>
+<table><thead><tr><th>فاز</th><th>خریدها</th><th>بودجه تقریبی</th></tr></thead><tbody>
+<tr><td>فاز ۱</td><td>۵ روغن شروع + دیفیوزر ساده + جوجوبا و بادام + ظروف شیشه‌ای + (اختیاری) ترازوی گرمی</td><td>~۹۵–۱۳۰ €</td></tr>
+<tr><td>فاز ۲</td><td>۱۵ روغن L2 در ۳ سری ۵تایی + موم/شی‌باتر/دیسپرسنت + کتاب S2</td><td>~۱۵۰–۲۰۰ € + کتاب</td></tr>
+<tr><td>فاز ۳</td><td>۱ هایدروسل + نمونه‌های تئوری لوکس (اختیاری) + کتاب S3/S4</td><td>کم (کتاب‌محور)</td></tr>
+<tr><td>فاز ۴ به بعد</td><td>دوره A&amp;P + دوره ۲۰۰ساعته + منتور + بیمه مسئولیت</td><td>شهریه‌ای [استعلام]</td></tr>
+</tbody></table>
+<blockquote><strong>قاعده خرید:</strong> فقط طبق لیست هفته · سقف ۵ روغن در هر سری · بدون نام لاتین/بچ/COA نخر · هلیکریزم فقط ۵ml.</blockquote>
+<blockquote><strong>قاعده سختگیرانه:</strong> در هر مقطع فقط <strong>یک کتاب فعال</strong> داری. اگر وسط S1 هستی، S3 را باز نمی‌کنی. هیچ منبع یازدهمی اضافه نمی‌شود.</blockquote>
+</div></section>
+<section class="view" id="view-macro">
+<div class="phase-top"><button class="btn ghost" onclick="showHome()">→ بازگشت به صفحه اصلی</button><div class="phase-title">🗺 ماکرو نقشه راه</div></div>
+<div class="month-pane"><h1 class="doc-title">✅ ماکرو + معماری پلن</h1>
+<h2>🧨 سه واقعیت تلخ قبل از شروع</h2>
+<p><strong>۱. «طبیعی» یعنی «بی‌خطر» نیست.</strong> قوی‌ترین روغن‌ها (میخک، دارچین، وینترگرین) خطرناک‌ترین‌هایند. هر فرمول = محاسبه + چک حد پوستی + پتچ‌تست. بدون استثنا.</p>
+<p><strong>۲. شواهد ≠ اثبات.</strong> اثر در پلیت آزمایشگاه یعنی اثر در پلیت، نه درمان عفونت. هر کس به تو «قول درمان» داد (حتی خودت)، دارد مرز حرفه‌ای را رد می‌کند.</p>
+<p><strong>۳. ۱۰۹۲ روز × ~۴۵ دقیقه ≈ ۸۲۰ ساعت.</strong> کافی است — فقط اگر حداقل <strong>۴۰٪ آن عملی</strong> باشد (فرمول، بلند، کیس)، نه فقط خواندن.</p>
+<h2>📐 معماری پلن</h2>
+<table><thead><tr><th>فاز</th><th>روزها</th><th>تمرکز</th><th>Milestone</th></tr></thead><tbody>
+<tr><td>فاز ۱ — ریشه‌ها</td><td>۱–۱۱۲</td><td>L0+L1: ایمنی، ۱۵ روغن، رقیق‌سازی</td><td>پک پایه + <strong>Gate A</strong></td></tr>
+<tr><td>فاز ۲ — پرکتیشنر</td><td>۱۱۳–۲۲۴</td><td>L2: ۳۰ روغن، فرمول وزنی، بلندینگ</td><td>پک پرکتیشنر + <strong>Gate B</strong></td></tr>
+<tr><td>فاز ۳ — پیشرفته</td><td>۲۲۵–۳۹۲</td><td>L3: سم‌شناسی، مقاله، GC/MS، کیس</td><td>۲ کیس واقعی + <strong>Gate C</strong></td></tr>
+<tr><td>فاز ۴ — حرفه‌ای</td><td>۳۹۳–۶۱۶</td><td>L4: اخلاق، A&amp;P، پورتفولیو</td><td>پورتفولیو + <strong>Gate D</strong></td></tr>
+<tr><td>فاز ۵ — گواهی و تخصص</td><td>۶۱۷–۸۱۲</td><td>آزمون ARC + شروع IFPA + تخصص</td><td>🏆 RA + انتخاب تخصص</td></tr>
+<tr><td>فاز ۶ — لانچ</td><td>۸۱۳–۱۰۹۲</td><td>اتمام IFPA + لانچ حرفه‌ای</td><td>🎓 شروع حرفه‌ای مستند</td></tr>
+</tbody></table>
+<h2>🚪 گیت‌های عبور</h2>
+<table><thead><tr><th>معیار</th><th>Gate A (روز ۱۱۲)</th><th>Gate B (روز ۲۲۴)</th><th>Gate C (روز ۳۹۲)</th><th>Gate D (روز ۶۱۶)</th></tr></thead><tbody>
+<tr><td>آزمون دانش</td><td>≥ ۸۰٪</td><td>≥ ۸۰٪</td><td>≥ ۸۰٪</td><td>≥ ۸۰٪ (۱۰۰ سؤال)</td></tr>
+<tr><td><strong>آزمون ایمنی</strong></td><td><strong>۱۰۰٪</strong></td><td><strong>۱۰۰٪</strong></td><td><strong>۱۰۰٪</strong></td><td><strong>۱۰۰٪</strong></td></tr>
+<tr><td>تحویلی عملی</td><td>۳ فرمول + ۱۰ پروفایل</td><td>۵ فرمول + ۱۵ پروفایل + ۳ بلند</td><td>۲ کیس + نقد مقاله</td><td>پورتفولیو کامل</td></tr>
+<tr><td>قانون شکست</td><td colspan="4">شکست در ایمنی = توقف تا رفع اشکال کامل. تایم‌لاین شناور است، گیت‌ها ثابت.</td></tr>
+</tbody></table>
+<h2>📊 شواهد در یک نگاه (A تا H)</h2>
+<table><thead><tr><th>کاربرد</th><th>سطح</th><th>جمع‌بندی</th></tr></thead><tbody>
+<tr><td>درد قاعدگی</td><td>A/B ✅</td><td>قوی‌ترین سیگنال، اطمینان متوسط</td></tr>
+<tr><td>اضطراب حین عمل</td><td>B ✅</td><td>سیگنال مثبت، ناهمگونی روشی</td></tr>
+<tr><td>استرس (بزرگسال سالم)</td><td>B ✅</td><td>احتمالا موثر</td></tr>
+<tr><td>کیفیت خواب</td><td>B/C ⚠️</td><td>سیگنال مثبت، قطعیت پایین-متوسط</td></tr>
+<tr><td>تهوع</td><td>C ⚠️</td><td>مختلط (در کودکان حتی یک RCT منفی)</td></tr>
+<tr><td>دمانس</td><td>A ❌</td><td>Cochrane: شواهد قانع‌کننده نیست</td></tr>
+<tr><td>«درمان» ضدمیکروبی</td><td>F ❌</td><td>فقط آزمایشگاهی — هرگز ≠ درمان</td></tr>
+</tbody></table>
+<blockquote><strong>Evidence ≠ Proof.</strong> اثر در پلیت یعنی اثر در پلیت. مطالعه حیوانی یعنی در حیوان. مطالعه کوچک یعنی مقدماتی، نه قطعی.</blockquote>
+<h2>🗓 ریتم هفتگی ثابت (~۵ ساعت)</h2>
+<table><thead><tr><th>روز</th><th>نوع</th><th>مدت</th><th>محتوا</th></tr></thead><tbody>
+<tr><td>شنبه</td><td><strong>LEARN</strong></td><td>۷۵ دقیقه</td><td>مفهوم جدید + تثبیت + لاگ</td></tr>
+<tr><td>یکشنبه</td><td>SCENT</td><td>۱۵ دقیقه</td><td>بویایی آگاهانه روغن هفته + ثبت واژگان</td></tr>
+<tr><td>دوشنبه</td><td><strong>OIL</strong></td><td>۶۰ دقیقه</td><td>پروفایل روغن + مقایسه بویایی + فلش‌کارت ایمنی</td></tr>
+<tr><td>سه‌شنبه</td><td>REST</td><td>۱۰ دقیقه</td><td>استراحت فعال: تنفس + بویایی آزاد</td></tr>
+<tr><td>چهارشنبه</td><td><strong>PRACTICE</strong></td><td>۶۰ دقیقه</td><td>محاسبه + ساخت + مستندسازی فرمول</td></tr>
+<tr><td>پنجشنبه</td><td><strong>REVIEW</strong></td><td>۶۰ دقیقه</td><td>Recall + مرور + کیس/ادعا + برنامه هفته بعد</td></tr>
+<tr><td>جمعه</td><td>LIGHT</td><td>۲۰ دقیقه</td><td>جبران عقب‌ماندگی یا مرور سبک + نمره هفته</td></tr>
+</tbody></table>
+<h2>📦 دستاوردهای ملموس</h2>
+<table><thead><tr><th>#</th><th>دستاورد</th><th>هدف</th><th>ددلاین</th></tr></thead><tbody>
+<tr><td>D1</td><td>لاگ خواب + inhaler اول</td><td>۷ روز ثبت</td><td>هفته ۴</td></tr>
+<tr><td>D2</td><td>پک پایه</td><td>۱۰ پروفایل + ۲۰ محاسبه + ۳ فرمول</td><td>هفته ۱۴</td></tr>
+<tr><td>D3</td><td>پک پرکتیشنر</td><td>۱۵ پروفایل + ۵ فرمول + ۳ بلند + نقد محصول</td><td>هفته ۳۰</td></tr>
+<tr><td>D4</td><td>پک پیشرفته</td><td>۲ کیس + نقد مقاله + پروتکل + ۲ GC/MS</td><td>هفته ۵۴</td></tr>
+<tr><td>D5</td><td>پورتفولیوی حرفه‌ای</td><td>۵ کیس + ۱۰ فرمول + طرح ۱صفحه‌ای</td><td>هفته ۸۸</td></tr>
+<tr><td>D6</td><td>گواهی‌ها</td><td>🏆 RA و دیپلم IFPA</td><td>سال ۳</td></tr>
+<tr><td>D7</td><td>لانچ</td><td>خدمت/محصول/کارگاه فعال</td><td>هفته ۱۵۶</td></tr>
+</tbody></table>
+<h2>📓 سه فرم اجباری (قلب مستندسازی تو)</h2>
+<p><strong>۱. برگه فرمول:</strong> نام · هدف · مواد با درصد/گرم · روش ساخت · ایمنی (حد پوستی + پتچ) · تاریخ · بچ روغن‌ها.</p>
+<p><strong>۲. برگه بلند:</strong> نام · هدف · مثلث نُت · درصد هر جزء · تاریخ · بازخورد ۳ نفر.</p>
+<p><strong>۳. فرم کیس (۱۳ مرحله):</strong> اطلاعات ← هدف ← سوابق/ریسک ← موارد منع ← شواهد (A-H) ← انتخاب ← رقیق‌سازی (محاسبه) ← فرمول ← ایمنی ← مستندسازی ← پیگیری ← سنجش ← ارجاع.</p>
+<h2>🔄 انعطاف و جبران</h2>
+<table><thead><tr><th>وضعیت</th><th>اقدام</th></tr></thead><tbody>
+<tr><td>۱ جلسه از دست رفت</td><td>جمعه ۳۰ دقیقه جبران، یا بی‌خیال</td></tr>
+<tr><td>۲ جلسه از دست رفت</td><td>جمعه ۶۰ دقیقه — فقط LEARN را جبران کن</td></tr>
+<tr><td>یک هفته کامل</td><td>هفته را تکرار کن؛ تایم‌لاین شناور است، گیت‌ها ثابت</td></tr>
+<tr><td>۲ هفته+ (سفر/بیماری)</td><td>حالت نگهداری: هفته‌ای ۲ جلسه ۲۰ دقیقه‌ای مرور بویایی</td></tr>
+</tbody></table>
+<p><strong>نسخه «روز کم‌انرژی» — ۱۵ دقیقه:</strong> ۵ دقیقه بویایی روغن هفته · ۵ دقیقه مرور یک فلش‌کارت ایمنی · ۵ دقیقه یک جمله «امروز چه یاد گرفتم». این روز <strong>انجام‌شده</strong> حساب می‌شود.</p>
+<h2>🔴 نقد خودم به این نقشه راه</h2>
+<p><strong>۱. توهم «خواندن = بلد بودن».</strong> 🚩 پروفایل می‌خوانی ولی فرمول نمی‌سازی. 🛠 قانون: هر هفته حداقل ۱ خروجی ملموس (فرمول/بلند/پروفایل نوشته‌شده).</p>
+<p><strong>۲. وسوسه روغن‌های لوکس و کیت‌های بزرگ.</strong> 🚩 خرید هیجانی قبل از L3. 🛠 خرید فقط طبق لیست هفته؛ سقف ۵ روغن در هر سری.</p>
+<p><strong>۳. شل‌شدن ایمنی بعد از ماه ۶.</strong> 🚩 «دیگه بلدم» و حذف پتچ‌تست. 🛠 آزمون ایمنی هر گیت ۱۰۰٪ است — بدون مذاکره.</p>
+<p><strong>۴. گیرکردن در سوراخ ingestion و بحث‌های مکاتب.</strong> 🚩 هفته‌ها بحث تئوریک. 🛠 موضع محتاطانه بگیر و رد شو؛ برگرد سر فرمول.</p>
+<h2>🇪🇺 چک‌لیست محصول در EU (وقتی محصولی شدی)</h2>
+<table><thead><tr><th>#</th><th>الزام (بدون استثنا)</th><th>نکته</th></tr></thead><tbody>
+<tr><td>1</td><td>Responsible Person داخل EU</td><td>بدون آن حتی نوتیفیکیشن ممکن نیست</td></tr>
+<tr><td>2</td><td>CPSR (ارزیابی ایمنی هر محصول)</td><td>توسط ارزیاب واجدشرایط، قبل از CPNP</td></tr>
+<tr><td>3</td><td>PIF (پرونده محصول)</td><td>نگهداری ۱۰ سال</td></tr>
+<tr><td>4</td><td>نوتیفیکیشن CPNP</td><td>اطلاع‌رسانی است، نه تأییدیه!</td></tr>
+<tr><td>5</td><td>لیبل کامل + ۸۲ آلرژن</td><td>از ۳۱ ژوئیه ۲۰۲۶؛ طبیعی‌ها هم شامل‌اند</td></tr>
+<tr><td>6</td><td>ممنوعیت ادعای درمانی بیماری</td><td>نقض = تخلف</td></tr>
+</tbody></table>
+<h2>⚡ قانون ۸۰/۲۰</h2>
+<p><strong>۲۰٪ طلایی:</strong> ریاضی رقیق‌سازی + چک حد پوستی · سه‌اژدها (اکسیداسیون/فتوتوکسیسیتی/حساسیت) · ۱۵ روغن L1 عمیق · A-H و «قول درمان نده» · مستندسازی · پرچم قرمز + ارجاع.</p>
+<p><strong>حذف کن:</strong> حفظ ۲۰۰ روغن · سوراخ ingestion در سال اول · رز و نرولی قبل از L3 · کرم آبی بدون نگهدارنده · ۱۰ گواهی حضور ارزان · دستور اینستاگرامی · کیت ۵۰تایی.</p>
+<blockquote style="border-right-color:#f87171;color:#fca5a5"><strong>یادآوری پایانی:</strong> این سند یک مسیر آموزشی است، نه توصیه پزشکی. در بارداری، بیماری، دارو و کودکان همیشه با پزشک/ماما مشورت کن.</blockquote>
+</div></section>
+<section class="view" id="view-safety">
+<div class="phase-top"><button class="btn ghost" onclick="showHome()">→ بازگشت به صفحه اصلی</button><div class="phase-title">🛡 ایمنی فوری</div></div>
+<div class="month-pane"><h1 class="doc-title">🛡 مرجع سریع ایمنی (همیشه در دسترس)</h1>
+<blockquote><strong>قانون صفر:</strong> هر فرمول = محاسبه درصد + چک حد پوستی در S2 + پتچ‌تست. بدون استثنا. در شک = دوز کمتر یا عدم مصرف.</blockquote>
+<h2>💧 رقیق‌سازی سریع</h2>
+<table><thead><tr><th>کاربرد</th><th>درصد</th><th>مثال (۳۰ml)</th></tr></thead><tbody>
+<tr><td>صورت / پوست حساس</td><td>۰.۵ تا ۱٪</td><td>۱٪ ≈ ۶ قطره</td></tr>
+<tr><td>بدن روزانه (استاندارد Tisserand)</td><td>۲٪</td><td>≈ ۱۲ قطره</td></tr>
+<tr><td>موضعی کوتاه‌مدت (≤۲ هفته)</td><td>۳ تا ۵٪</td><td>ناحیه کوچک فقط</td></tr>
+<tr><td>حمام</td><td>کم + دیسپرسنت اجباری</td><td>نمک تنها = پخش نمی‌کند</td></tr>
+<tr><td>مجموع مرکبات در بلند</td><td>قانون ۴ قطره</td><td>≤ ۴ قطره در ۳۰ml</td></tr>
+</tbody></table>
+<p><code>فرمول: حجم کل × درصد ÷ ۱۰۰</code> · <code>۱ml ≈ ۲۰ قطره</code> (دقیق‌ترین روش: ترازوی گرمی)</p>
+<h2>☀️ فتوتوکسیک‌ها</h2>
+<table><thead><tr><th>روغن</th><th>حد مجاز پوست</th><th>راه‌حل</th></tr></thead><tbody>
+<tr><td>برگاموت (پرسی)</td><td>۰.۴٪</td><td>نسخه FCF یا فقط استنشاقی</td></tr>
+<tr><td>لیمو (پرسی)</td><td>۲٪</td><td>نسخه تقطیری بی‌خطرتر است</td></tr>
+<tr><td>گریپ‌فروت</td><td>۴٪</td><td>رعایت سقف + قانون ۴ قطره</td></tr>
+<tr><td>لایم پرسی</td><td>⚠️ پرریسک</td><td>لایم تقطیری ✅ غیرفتوتوکسیک</td></tr>
+<tr><td>پرتقال شیرین / ماندارین</td><td>ناچیز</td><td>ولی اکسیداسیون سریع! (۶–۱۲ ماه)</td></tr>
+</tbody></table>
+<p>بعد از مصرف موضعی فتوتوکسیک بالای حد: <strong>۱۲ تا ۱۸ ساعت</strong> دوری از آفتاب/سولاریوم.</p>
+<h2>👶 باندهای سنی کودکان (Tisserand)</h2>
+<table><thead><tr><th>سن</th><th>موضعی</th><th>نکته</th></tr></thead><tbody>
+<tr><td>زیر ۳ ماه</td><td>اجتناب</td><td>فقط در ضرورت ۰.۱٪</td></tr>
+<tr><td>۳ تا ۲۴ ماه</td><td>۰.۲۵٪</td><td>هایدروسل ترجیحی</td></tr>
+<tr><td>۲ تا ۶ سال</td><td>۰.۵ تا ۱٪</td><td>روغن‌های ملایم فقط</td></tr>
+<tr><td>۶ تا ۱۵ سال</td><td>۱ تا ۲٪</td><td>همچنان با احتیاط</td></tr>
+</tbody></table>
+<p>نعناع: پخش زیر ۳ سال ممنوع · اکالیپتوس زیر ۳ سال فقط ۰.۵٪ · <strong>گربه:</strong> حساسیت شدید (درخت چای/فنول‌ها).</p>
+<h2>☠️ پرریسک‌ها (حفظ کن)</h2>
+<table><thead><tr><th>روغن/ترکیب</th><th>ریسک</th><th>قانون</th></tr></thead><tbody>
+<tr><td>میخک (اوژنول)</td><td>تحریک + حساسیت</td><td>≤ ۰.۵٪</td></tr>
+<tr><td>وینترگرین / بیرچ</td><td>تداخل وارفارین + سمیت کشنده کودک در بلع</td><td>قفل کودک + چک دارو</td></tr>
+<tr><td>پنی‌رویال (پولگون)</td><td>سمیت کبدی</td><td>عملا ممنوع</td></tr>
+<tr><td>فنول‌ها (آویشن/اورگانو/دارچین)</td><td>تحریک شدید پوست/مخاط</td><td>دوز خیلی کم + احتیاط</td></tr>
+<tr><td>سیترال (لمون‌گراس)</td><td>حساسیت‌زایی</td><td>تست + دوز کم</td></tr>
+</tbody></table>
+<h2>🚩 پرچم قرمز = توقف/ارجاع</h2>
+<table><thead><tr><th>وضعیت</th><th>اقدام</th></tr></thead><tbody>
+<tr><td>بارداری (مخصوصا سه‌ماهه اول)</td><td>حداقل مطلق + هماهنگی با ماما</td></tr>
+<tr><td>مصرف دارو (ضدانعقاد، آرام‌بخش، فشار...)</td><td>چک تداخل + عدم جایگزینی دارو</td></tr>
+<tr><td>صرع / آسم شدید</td><td>احتیاط + مشورت پزشک</td></tr>
+<tr><td>درد بیش از ۲ هفته یا بدترشونده</td><td>ارجاع به پزشک</td></tr>
+<tr><td>قرمزی/خارش/تنگی نفس بعد از مصرف</td><td>قطع فوری + شست‌وشو + پزشک</td></tr>
+</tbody></table>
+<h2>🧴 اکسیداسیون و نگهداری</h2>
+<p>تاریخ بازکردن را روی لیبل بنویس · مرکبات و کاج‌ها: ۶ تا ۱۲ ماه · شیشه تیره + جای خنک + درب محکم · بوی تند/تیز یا غلظت چسبناک = <strong>دور بریز</strong> (نه روی پوست، نه در دیفیوزر).</p>
+<h2>🩹 پتچ‌تست (یادآوری ۳۰ ثانیه‌ای)</h2>
+<p>فرمول نهایی ← داخل بازو ← ۲۴ تا ۴۸ ساعت صبر ← قرمزی/خارش/سوزش = عدم مصرف. برای هر فرمول جدید، هر بار.</p>
+</div></section>
+<section class="view" id="view-phases">
+<div class="phase-top"><button class="btn ghost" onclick="showHome()">→ بازگشت به صفحه اصلی</button><div class="phase-title">📅 فهرست فازها</div></div>
+<div class="phases-grid">
+<div class="pcard pc1" onclick="openPhase('p1')"><div class="pcard-title">فاز ۱ — ریشه‌ها</div><div class="pcard-range">روز ۱ تا ۱۱۲</div><div class="pcard-go">مشاهده فاز ←</div></div>
+<div class="pcard pc2" onclick="openPhase('p2')"><div class="pcard-title">فاز ۲ — پرکتیشنر</div><div class="pcard-range">روز ۱۱۳ تا ۲۲۴</div><div class="pcard-go">مشاهده فاز ←</div></div>
+<div class="pcard pc3" onclick="openPhase('p3')"><div class="pcard-title">فاز ۳ — پیشرفته</div><div class="pcard-range">روز ۲۲۵ تا ۳۹۲</div><div class="pcard-go">مشاهده فاز ←</div></div>
+<div class="pcard pc4" onclick="openPhase('p4')"><div class="pcard-title">فاز ۴ — حرفه‌ای</div><div class="pcard-range">روز ۳۹۳ تا ۶۱۶</div><div class="pcard-go">مشاهده فاز ←</div></div>
+<div class="pcard pc5" onclick="openPhase('p5')"><div class="pcard-title">فاز ۵ — گواهی و تخصص</div><div class="pcard-range">روز ۶۱۷ تا ۸۱۲</div><div class="pcard-go">مشاهده فاز ←</div></div>
+<div class="pcard pc6" onclick="openPhase('p6')"><div class="pcard-title">فاز ۶ — لانچ</div><div class="pcard-range">روز ۸۱۳ تا ۱۰۹۲</div><div class="pcard-go">مشاهده فاز ←</div></div>
+</div>
+</section>
+<section class="view" id="view-p1"></section>
+<section class="view" id="view-p2"></section>
+<section class="view" id="view-p3"></section>
+<section class="view" id="view-p4"></section>
+<section class="view" id="view-p5"></section>
+<section class="view" id="view-p6"></section>
+<footer class="footer">🌿 نقشه راه ۳ ساله آروماتراپی · آموزشی، نه پزشکی — «طبیعی» یعنی «بی‌خطر» نیست · Research updated through 2026-09-04</footer>
+</div>
+<script>
+/* ═══════════ دیتای نقشه راه آروماتراپی — ۱۵۶ هفته ═══════════
+   قالب هر هفته: [شماره, سطح, تم, تئوری, منبع تئوری, روغن هفته, تمرین عملی, منبع عملی, مرور, پرچم]
+   پرچم: '' عادی · buy خرید · exam آزمون · star نقطه عطف */
+const WEEKS=[
+[1,'L0','آروماتراپی چیست و چه نیست','تعریف، جایگاه در سلامت مکمل، فرق با Herbal و Fragrance','S8+S6','لاوندر','آماده‌سازی دفتر لاگ + فضای مطالعه + نصب اپ فلش‌کارت','لاگ','۳ باور غلط را هرکدام با یک جمله رد کن',''],
+[2,'L0','پنج روغن شروع + دیفیوزر ایمن','معرفی ۵ روغن کم‌ریسک + اصول دیفیوزر: ۳۰ تا ۶۰ دقیقه + تهویه','S6','پرتقال شیرین','خرید سری شروع (۵ روغن + دیفیوزر + ۲ حامل) + اولین دیفیوزر مستند','خرید','نام لاتین ۵ روغن را از حفظ بنویس','buy'],
+[3,'L0','ایمنی پایه','هرگز خالص روی پوست + پتچ‌تست + فتوتوکسیسیتی مرکبات + نگهداری','S7','درخت چای','اجرای پتچ‌تست واقعی + ساخت ۱۰ فلش‌کارت ایمنی','تمرین','سناریو: دوست باردارت رزماری می‌خواهد؛ جوابت؟',''],
+[4,'L0','پروژه خواب + آزمون L0','مرور کل L0 + آموزش ساخت inhaler استنشاقی','S6','اکالیپتوس رادیاتا','ساخت inhaler لاوندر + شروع لاگ ۷روزه خواب','پروژه ۰','آزمون L0: ۱۵ سؤال + ۵ سناریو ایمنی (۱۰۰٪)','exam'],
+[5,'L1','شیمی ۱: خانواده‌ها','مونوترپن، سسکویی‌ترپن، الکل، استر + ۱ مثال روغن برای هرکدام','S1','نعناع فلفلی','تکمیل جدول خانواده‌های شیمیایی با مثال','تمرین','هر روغن هفته را به خانواده‌اش وصل کن',''],
+[6,'L1','شیمی ۲ + بوتانی','کتون، آلدهید، فنول، اکسید + نام لاتین و chemotype','S1','رزماری','نوشتن ۱۵ نام لاتین کامل (جنس + گونه)','تمرین','chemotype رزماری یعنی چه؟ با مثال',''],
+[7,'L1','استخراج + کنترل کیفیت','تقطیر بخار، پرس سرد، CO2 + لیبل‌خوانی، GC/MS و COA','S1+S8','لیمو','ساخت چک‌لیست خرید هوشمند (لاتین/بچ/COA)','تمرین','لایم تقطیری با پرسی چه فرقی در ایمنی دارد؟',''],
+[8,'L1','ریاضی رقیق‌سازی','فرمول درصد + محاسبه ۰.۵ تا ۵٪ + کاربرد هر سطح','S7','کندر','حل ۱۰ محاسبه اول رقیق‌سازی (قدم‌به‌قدم)','تمرین','۲٪ در ۳۰ میلی‌لیتر چند قطره است؟ چرا؟',''],
+[9,'L1','پنج پروفایل اول (۱)','نعناع، رزماری، لیمو: ایمنی خاص هرکدام','S1','یلانگ‌یلانگ','نوشتن ۳ پروفایل کامل + شروع فرمول ماساژ ۲٪','فرمول','حد لیمو ۲٪ است؛ علتش؟',''],
+[10,'L1','پنج پروفایل اول (۲) + ماساژ','کندر، یلانگ: تقلب و دوز + تکمیل ماساژ','S1','سدر اطلس','ساخت روغن ماساژ ۲٪ با برگه فرمول کامل','فرمول','برگه فرمولت را با چک‌لیست بازبینی کن',''],
+[11,'L1','پنج پروفایل دوم (۱)','سدر، کلاری‌سیج، برگاموت: موارد منع','S1','کلاری‌سیج','نوشتن ۳ پروفایل + ساخت رول‌آن تمرکز ۱٪','فرمول','برگاموت ۰.۴٪؛ اگر FCF باشد چه؟',''],
+[12,'L1','پنج پروفایل دوم (۲) + حمام','بابونه رومی، زنجبیل + اصول حمام با دیسپرسنت','S1','برگاموت','ساخت نمک حمام با دیسپرسنت (نه نمک تنها)','فرمول','۱۰ پروفایل را یک‌جا بازبینی کن',''],
+[13,'L1','شکار ادعا','سطح‌بندی A تا H روی ۵ ادعای تبلیغاتی واقعی','S8','بابونه رومی','تکمیل برگه شکارچی ادعا (۵ رد مستدل)','تمرین','شواهد زنجبیل خوراکی ≠ اسانس زنجبیل؛ توضیح بده',''],
+[14,'L1','آزمون L1 / گیت A','مرور جامع L0+L1 + تحویل پک پایه','S1+S7','زنجبیل','تحویل پک: ۱۰ پروفایل + ۲۰ محاسبه + ۳ فرمول','پک پایه','آزمون جامع + ایمنی ۱۰۰٪','exam'],
+[15,'L1','پل L2: مرور + خرید سری ۱','مرور ۱۵ روغن + آماده‌سازی سطح پرکتیشنر','S1','مرور چرخشی ۱۵ روغن','خرید سری ۱: ماندارین، گریپ‌فروت، لایم، پاین، سرو','خرید','فلش‌کارت سریع ۱۵ روغن','buy'],
+[16,'L1','استراحت فعال + سازماندهی','مرور سبک + نمره فاز ۱ + هدف‌گذاری فاز ۲','—','—','مرتب‌سازی قفسه روغن‌ها + دفتر + برچسب تاریخ‌ها','سازماندهی','نمره فاز ۱ (۱ تا ۱۰) + ۳ هدف فاز ۲','star'],
+[17,'L2','حامل‌ها (۱)','جوجوبا، بادام شیرین، نارگیل فراکشن‌شده + ماندگاری','S1+S5','ماندارین','تکمیل جدول مقایسه حامل‌ها','تمرین','چرا جوجوبا ماندگاری بالایی دارد؟',''],
+[18,'L2','فرمول وزنی + ترازو','گرم به‌جای قطره + scale کردن بچ','S5','گریپ‌فروت','تبدیل ۵ فرمول قبلی به نسخه وزنی','تمرین','بالم ۵۰ گرمی ۲٪ چند گرم اسانس؟',''],
+[19,'L2','بلندینگ (۱): نُت‌ها','بالا/میانی/پایه + ۸ خانواده بویایی + نسبت ۳۰/۵۰/۲۰','S3','لایم تقطیری','اولین بلند آزمایشی + برگه بلند','بلند','مثلث نُت بلندت را بکش',''],
+[20,'L2','پروفایل سری ۱ + خرید سری ۲','تکمیل ۵ پروفایل ماندارین تا سرو','S1','پاین','۵ پروفایل + خرید جونیپر، فلفل سیاه، هل، میخک، وتیور','خرید','پاین اکسید شود چه می‌شود؟','buy'],
+[21,'L2','بالم + نسبت‌ها','نسبت موم:کره:روغن + تست بافت','S5','سرو','ساخت بالم چندمنظوره ۲٪ (وزنی + مستند)','فرمول','بافت بالم را نمره بده + اصلاح',''],
+[22,'L2','کرم از پایه آماده','چرا پایه دارای نگهدارنده + هشدار کرم آبی دست‌ساز','S5','جونیپر','ساخت کرم ۱٪ از پایه آماده + برگه','فرمول','کرم دست‌ساز بدون نگهدارنده چه ریسکی دارد؟',''],
+[23,'L2','حمام/اسپری/کمپرس + خرید سری ۳','دیسپرسنت اجباری + حلال اسپری + کمپرس','S5','فلفل سیاه','اسپری اتاق + خرید پاچولی، بابونه آلمانی، هلیکریزم، صندل','خرید','چرا نمک تنها اسانس را پخش نمی‌کند؟','buy'],
+[24,'L2','پروفایل سری ۲','جونیپر تا وتیور: موارد منع خاص','S2','هل','نوشتن ۵ پروفایل کامل سری ۲','تمرین','حد میخک ۰.۵٪؛ علتش؟',''],
+[25,'L2','نقد محصول بازاری','INCIخوانی + استخراج آلرژن‌ها + رد ادعا با A-H','S10','میخک','نقد کامل ۱ محصول بازاری (عکس لیبل + تحلیل)','نقد','۳ ادعای محصول را نمره بده',''],
+[26,'L2','پروفایل سری ۳','پاچولی تا صندل + تقلب و پایداری','S1+S2','وتیور','نوشتن ۵ پروفایل کامل سری ۳','تمرین','هلیکریزم اصل را چطور تشخیص می‌دهی؟',''],
+[27,'L2','بلندهای امضادار (۱)','شادی + تمرکز با مثلث نُت','S3','پاچولی','۲ بلند مستند + شروع تست ۳نفره','بلند','بازخوردها را ثبت و مقایسه کن',''],
+[28,'L2','بلند آرامش + جمع‌بندی تست','تکمیل بلند سوم + تحلیل بازخوردها','S3','بابونه آلمانی','بلند سوم + جدول نتایج تست ۳نفره','بلند','کدام بلند برنده شد؟ چرا؟',''],
+[29,'L2','شکار ادعا سطح ۲','۱۰ ادعای تبلیغاتی + لیست سیاه واژگان','S8+S9','هلیکریزم','برگه ۱۰ ادعا با سطح A-H','تمرین','۵ واژه ممنوعه تبلیغاتی بنویس',''],
+[30,'L2','مرور L2 + تکمیل پک','بازبینی ۳۰ پروفایل + ۵ فرمول + ۳ بلند','S2','صندل','چک‌لیست تحویلی‌ها + رفع نقص پک پرکتیشنر','پک','پک را با معیار نمره بسنج',''],
+[31,'L2','آزمون L2 / گیت B (۱)','آزمون دانش ۳۰ سؤالی + بازبینی عملی','S2','—','تحویل نهایی پک پرکتیشنر','آزمون','آزمون دانش (۸۰٪)','exam'],
+[32,'L2','آزمون L2 / گیت B (۲)','۱۰ سناریو ایمنی + جشن پایان فاز ۲','S2','—','سناریوهای ایمنی (۱۰۰٪) + استراحت','آزمون','نمره فاز ۲ + هدف‌گذاری L3','exam'],
+[33,'L3','مکانیسم ۱: حساسیت‌زایی','هاپتن + روغن‌های اکسیدشونده + پیشگیری','S2','لمون‌گراس','جزوه مکانیسم + فلش‌کارت ۱۰تایی','جزوه','سیترال چرا حساسیت‌زاست؟',''],
+[34,'L3','مکانیسم ۲: فتوتوکسیسیتی','فوروکومارین + حدهای مرکبات + قانون ۴ قطره','S2','آویشن (تئوری)','جدول حدهای فتوتوکسیک ۸ روغن','تمرین','ترکیب ۳ مرکبات را چطور حد می‌کنی؟',''],
+[35,'L3','مکانیسم ۳: تحریک مخاط + سیستمیک','فنول، آلدهید، ۱و۸-سینئول + غشای مخاطی','S2','اورگانو (تئوری)','جدول پرریسک‌ها (بخش ۱)','تمرین','اورگانو چرا روغن مبتدی نیست؟',''],
+[36,'L3','سمیت حاد + وینترگرین','متیل‌سالیسیلات + تداخل وارفارین + سمیت کودک','S2','وینترگرین (تئوری!)','پروتکل قفل ایمنی: نگهداری دور از کودک','تمرین','بلع وینترگرین در کودک یعنی؟',''],
+[37,'L3','کتون‌ها: خط قرمز','توجون (مریم‌گلی/افسنتین) + پولگون (پنی‌رویال ممنوع)','S2','مریم‌گلی (تئوری)','تکمیل جدول پرریسک‌ها (بخش ۲)','تمرین','پنی‌رویال چرا عملا ممنوع است؟',''],
+[38,'L3','فنول‌ها و آلدهیدها + حد پیشرفته','آویشن، دارچین، سیترال + استخراج max dermal از S2','S2','دارچین (تئوری)','استخراج حد ۱۰ روغن مستقیم از S2','تمرین','حد هر روغن جدید را در ۲ دقیقه پیدا کن',''],
+[39,'L3','مناظره ingestion','مکتب فرانسوی در برابر انگلیسی + نتیجه محتاطانه','S2+S8','هایدروسل (آشنایی)','نوشتن موضع مستدل ۱صفحه‌ای خودت','تمرین','موضع تو در یک جمله؟',''],
+[40,'L3','تداخل دارویی','وارفارین، آرام‌بخش‌ها + روغن گریپ‌فروت ≠ آب آن','S2','گریپ‌فروت (مرور)','چک‌لیست تداخل برای فرم intake','تمرین','فرق تداخل روغن و آب گریپ‌فروت؟',''],
+[41,'L3','بارداری','سه‌ماهه‌به‌سه‌ماهه + لیست ممنوعه + رقیق‌سازی ≤۱٪','S2+S4','ماندارین (مرور)','فلش‌کارت ممنوعه‌های بارداری','تمرین','سه‌ماهه اول؛ سیاست تو؟',''],
+[42,'L3','کودکان','باندهای سنی + هایدروسل ترجیحی زیر ۲ سال','S2','بابونه رومی (مرور)','جدول باندهای سنی روی دیوار','تمرین','نعناع زیر ۳ سال؟ اکالیپتوس؟',''],
+[43,'L3','سالمند/آسم/صرع/حیوانات','پوست نازک، پلی‌فارماسی + گربه: حساسیت شدید','S2','کندر (مرور)','پروتکل ۱صفحه‌ای حیوانات خانگی','تمرین','درخت چای و گربه؟',''],
+[44,'L3','پروتکل‌نویسی جمعیت خاص','ساختار پروتکل ۲صفحه‌ای قابل‌اجرا','S2+S4','—','نوشتن پروتکل کامل ۱ گروه به انتخاب','پروتکل','پروتکلت را با چک‌لیست بسنج','star'],
+[45,'L3','PubMed (۱): جست‌وجو','Boolean + MeSH + فیلترها','S9','—','۵ جست‌وجوی واقعی ذخیره‌شده','پژوهش','۱ استراتژی جست‌وجو را مستند کن',''],
+[46,'L3','نقد مقاله','بایاس، حجم نمونه، اندازه اثر، بالینی در برابر آماری','S9','—','نقد کامل ۱ RCT با فرم نقد','نقد','پیام مقاله برای پرکتیشنر؟',''],
+[47,'L3','GC/MS خوانی (۱)','۳ تا ۵ ترکیب اصلی + خواندن گزارش واقعی','S1','—','تفسیر ۱ گزارش واقعی تأمین‌کننده‌ات','آزمایشگاه','۳ ترکیب اصلی گزارش؟',''],
+[48,'L3','GC/MS خوانی (۲) + تقلب','۳ پرچم تقلب + دنیای لوکس (رز اتو)','S1','رز اتو (تئوری)','فهرست ۳ پرچم تقلب با توضیح','آزمایشگاه','رز اتو با ابسولوت چه فرقی دارد؟',''],
+[49,'L3','فرم کیس ۱۳مرحله‌ای','ساختار کیس + رضایت‌نامه + انتخاب داوطلب','S4','نرولی (تئوری)','آماده‌سازی فرم‌ها + جذب ۱ داوطلب','کیس','رضایت‌نامه‌ات کامل است؟',''],
+[50,'L3','کیس واقعی ۱ (شروع)','intake کامل + انتخاب روغن + محاسبه','S2+S4','یاس (تئوری)','ثبت مراحل ۱ تا ۹ کیس اول','کیس','موارد منع را دوباره چک کن',''],
+[51,'L3','کیس ۱ (پیگیری) + هایدروسل','پیگیری + سنجش + هایدروسل رز و بابونه','S4','هایدروسل رز','تکمیل کیس اول + خرید ۱ هایدروسل','کیس','نتیجه در برابر هدف؟','star'],
+[52,'L3','پایداری + مسئولیت حرفه‌ای','صندل آلبوم، رزوود، CITES + خرید مسئولانه','S8','صندل (مرور)','سیاست خرید پایدار خودت (۱ صفحه)','تمرین','کدام روغن‌ها را نمی‌خری؟ چرا؟',''],
+[53,'L3','کیس واقعی ۲ (شروع)','کیس دوم با پیچیدگی بیشتر','S2+S4','ملیسا (تئوری)','ثبت مراحل ۱ تا ۹ کیس دوم','کیس','درس کیس اول را اعمال کن',''],
+[54,'L3','کیس ۲ (پیگیری) + تکمیل پک','تحلیل + مقایسه دو کیس + بستن پک پیشرفته','S4','—','تحویل پک: ۲ کیس + نقد + پروتکل + ۲ GC/MS','پک','پک را با معیار بسنج',''],
+[55,'L3','مرور L3','بازبینی سم‌شناسی + جمعیت‌ها + پژوهش','S2','—','رفع نقص تحویلی‌ها + فلش‌کارت نهایی','مرور','ضعیف‌ترین حلقه‌ات؟',''],
+[56,'L3','آزمون L3 / گیت C','۴۰ سؤال + ۱۵ سناریو ایمنی + جشن فاز ۳','S2','—','آزمون جامع (ایمنی ۱۰۰٪)','آزمون','نمره فاز ۳ + هدف L4','exam'],
+[57,'L4','Scope of Practice','چه می‌کنم/نمی‌کنم/کی ارجاع می‌دهم (۱ صفحه)','S10','مرور چرخشی','نوشتن و امضای سند scope شخصی','سند','مرز تو در ۳ جمله؟','star'],
+[58,'L4','رضایت آگاهانه + پرونده','فرم intake، رضایت، پیگیری استاندارد','S10','مرور چرخشی','ساخت ست فرم‌های حرفه‌ای (دوزبانه خلاصه)','فرم','فرم‌هایت را با چک‌لیست بسنج',''],
+[59,'L4','ارجاع + شبکه','کی به پزشک/ماما + ساخت شبکه ارجاع واقعی','S4','مرور چرخشی','شناسایی ۱ پزشک/ماما + ۱ مشاور در دسترس','شبکه','معیار ارجاع فوری؟',''],
+[60,'L4','تبلیغات صادقانه','لیست سیاه ادعاها + ارتباط شواهد با مراجع','S10','مرور چرخشی','بازنویسی ۳ متن تبلیغاتی به نسخه قانونی','تمرین','۵ واژه ممنوعه را از حفظ بگو',''],
+[61,'L4','A&P (۱): پوست و جذب','لایه‌ها + مسیرهای جذب پوستی اسانس','A&P','مرور چرخشی','نقشه جذب پوستی (۱ صفحه تصویری)','جزوه','چرا پوست نازک = دوز کمتر؟',''],
+[62,'L4','A&P (۲): تنفس و بویایی','مسیر بویایی + لیمبیک + استنشاق ایمن','A&P','مرور چرخشی','نمودار مسیر بو تا مغز','جزوه','اثر بویایی در برابر دارویی؟',''],
+[63,'L4','A&P (۳): عصبی + استرس','سمپاتیک/پاراسمپاتیک + خواب و اضطراب','A&P','مرور چرخشی','جدول روغن-اثر با مبنای A&P','تمرین','کدام ادعاها پشتوانه دارند؟',''],
+[64,'L4','آزمونک A&P (۱)','مرور ۳ سیستم + تست ۳۰ سؤالی','A&P','—','آزمونک + رفع اشکال','آزمونک','نمره‌ات؟ برنامه جبران؟',''],
+[65,'L4','A&P (۴): قلب و عروق','فشارخون + احتیاط‌های کلاسیک (رزماری و...)','A&P','مرور چرخشی','فلش‌کارت احتیاط‌های قلبی','تمرین','رزماری و فشارخون: سنت یا سند؟',''],
+[66,'L4','A&P (۵): ایمنی و التهاب','التهاب + حساسیت + پاسخ ایمنی','A&P','مرور چرخشی','نقشه مفهومی التهاب و روغن‌ها','جزوه','ادعای ضدالتهاب در چه سطحی؟',''],
+[67,'L4','A&P (۶): گوارش + دفع','کبد، کلیه + چرا بلع خودسرانه نه','A&P','مرور چرخشی','جزوه دفع + بازبینی موضع ingestion','جزوه','کبد چرا در بلع مهم است؟',''],
+[68,'L4','A&P (۷): غدد و هورمون','محور استرس + احتیاط‌های هورمونی','A&P','مرور چرخشی','جدول احتیاط‌های هورمونی','تمرین','کدام روغن‌ها پرچم هورمونی دارند؟',''],
+[69,'L4','A&P (۸): عضلانی + درد','انواع درد + نقش مکمل آروماتراپی','A&P','مرور چرخشی','پروتکل درد عضلانی (مرور کیس ۲)','تمرین','مرز ارجاع در درد کجاست؟',''],
+[70,'L4','A&P (۹): بارداری','مرور L3 با عمق A&P + شیردهی','A&P+S4','مرور چرخشی','به‌روزرسانی پروتکل بارداری','پروتکل','چه چیزی به پروتکل اضافه شد؟',''],
+[71,'L4','ثبت‌نام دوره ۲۰۰ساعته','انتخاب مدرسه NAHA-approved + برنامه موازی','S10','—','ثبت‌نام + تقویم موازی ۶ماهه','ثبت‌نام','اعتبار مدرسه را کجا چک کردی؟','star'],
+[72,'L4','آزمونک A&P (۲)','تست جامع ۵۰ سؤالی + مدرک','A&P','—','آزمونک + دریافت مدرک A&P','آزمونک','جشن مدرک اول رسمی 🎉','star'],
+[73,'L4','مدل درآمدی + قیمت‌گذاری','مواد + زمان + بیمه + مالیات','بیزینس','مرور چرخشی','قیمت‌گذاری ۱ خدمت + ۱ محصول (واقعی)','بیزینس','قیمت تمام‌شده‌ات؟',''],
+[74,'L4','بیمه + ثبت کسب‌وکار','مسئولیت حرفه‌ای + ثبت (کشور مقصد بعدا)','بیزینس','مرور چرخشی','چک‌لیست حقوقی شخصی (۷قدمه، نسخه خام)','بیزینس','وقتی مقصد مشخص شد، قدم اول؟',''],
+[75,'L4','کیس عمیق ۱','کیس پیچیده: چندریسکی','S2+S4','مرور چرخشی','شروع کیس عمیق اول (مراحل ۱ تا ۹)','کیس','ریسک‌ها را اولویت‌بندی کن',''],
+[76,'L4','کیس عمیق ۲','کیس پیچیده دوم + پیگیری اولی','S2+S4','مرور چرخشی','کیس دوم + پیگیری اول','کیس','مقایسه دو رویکرد؟',''],
+[77,'L4','کیس عمیق ۳ + سوپرویژن','کیس سوم + آماده‌سازی برای منتور','S4','مرور چرخشی','بسته ۳ کیس برای نقد منتور','کیس','۳ سؤال برای منتور بنویس',''],
+[78,'L4','تحلیل across-case','الگوهای مشترک ۳ کیس + درس‌ها','S4','—','گزارش تحلیلی ۲صفحه‌ای','تحلیل','قوی‌ترین الگو؟ ضعیف‌ترین؟',''],
+[79,'L4','منتور (۱)','جلسه نقد کیس‌ها با متخصص','منتور','—','اعمال بازخورد منتور روی کیس‌ها','منتور','۳ اصلاح اصلی چه بود؟','star'],
+[80,'L4','آزمونک جامع','تست ۶۰ سؤالی کل L4 تا اینجا','S2+S10','—','آزمونک + برنامه ۸ هفته پایانی','آزمونک','آماده پورتفولیو هستی؟',''],
+[81,'L4','پورتفولیو (۱): کیس‌ها','نهایی‌سازی ۵ کیس با فرم یکسان','S4','—','۵ کیس تمیز + فهرست','پورتفولیو','یکدستی فرم‌ها را چک کن',''],
+[82,'L4','پورتفولیو (۲): فرمول‌ها','۱۰ فرمول امضادار با بچ و تاریخ','S5','مرور چرخشی','۱۰ برگه فرمول نهایی','پورتفولیو','امضای تو (سبک فرمولت)؟',''],
+[83,'L4','طرح ۱صفحه‌ای','پلن کسب‌وکار یا سیلابس کارگاه','بیزینس','—','طرح ۱صفحه‌ای + نقد منتور/همتا','طرح','مسیرت: خدمت، محصول یا آموزش؟','star'],
+[84,'L4','Mock exam (۱)','شبیه‌سازی ۱۰۰ سؤالی + ۵ کیس','S2','—','اجرای mock اول (زمان‌دار)','آزمون','نمره + تحلیل غلط‌ها',''],
+[85,'L4','رفع اشکال mock','حمله به ۳ حوزه ضعیف','S2','—','جزوه رفع اشکال + تست مجدد','مرور','ضعف‌ها برطرف شد؟',''],
+[86,'L4','Mock exam (۲) + سناریو','mock دوم + سناریوهای ایمنی','S2','—','اجرای mock دوم (هدف: ایمنی ۱۰۰٪)','آزمون','مقایسه دو mock؟',''],
+[87,'L4','ثبت‌نام مسیر گواهی','انتخاب آزمون/دیپلم واقعی + تقویم','S10','—','ثبت‌نام + چک‌لیست مدارک','ثبت‌نام','ددلاین آزمون؟','star'],
+[88,'L4','مرور فاز + گیت D','بازبینی پورتفولیو + آمادگی گواهی','S10','—','تأیید گیت D + جشن پایان سال ۲','جشن','نمره سال ۲ + هدف سال ۳','exam'],
+[89,'Y3','مرور ARC (۱): ایمنی','سم‌شناسی فشرده + تست‌زنی','S2','مرور چرخشی','۵۰ تست ایمنی (زمان‌دار)','تست','درصدت؟',''],
+[90,'Y3','مرور ARC (۲): شیمی و بوتانی','خانواده‌ها + chemotype + کیفیت','S1+S3','مرور چرخشی','۵۰ تست + فلش‌کارت','تست','خطاهای پرتکرار؟',''],
+[91,'Y3','مرور ARC (۳): فرمول و بلند','محاسبات + مثلث نُت + مستندسازی','S5+S3','مرور چرخشی','۲۰ محاسبه سرعتی + ۱ بلند','تست','سرعت محاسبه‌ات؟',''],
+[92,'Y3','مرور ARC (۴): شواهد','A-H + نقد سریع + ادعاکشی','S9','مرور چرخشی','۱۰ ادعا در ۳۰ دقیقه','تست','رکوردت؟',''],
+[93,'Y3','مرور ARC (۵): جمعیت‌ها','بارداری/کودک/حیوان + پروتکل‌ها','S2+S4','مرور چرخشی','بازبینی ۳ پروتکل + تست','تست','کدام پروتکل ضعیف است؟',''],
+[94,'Y3','مرور ARC (۶): اخلاق و کیس','scope + ارجاع + فرم کیس','S10+S4','مرور چرخشی','۱ کیس تمرینی کامل','تست','زمان کیس‌نویسی‌ات؟',''],
+[95,'Y3','Mock ARC (۱)','شبیه‌سازی کامل بخش ۱','S2','—','اجرای mock + تحلیل','آزمون','نقشه ضعف‌ها؟',''],
+[96,'Y3','رفع اشکال + نقاط ضعف','حمله متمرکز به ۲ حوزه','S2','—','جزوه فشرده ضعف‌ها','مرور','پیشرفت محسوس؟',''],
+[97,'Y3','Mock ARC (۲)','شبیه‌سازی کامل بخش ۲','S2','—','اجرای mock دوم','آزمون','آماده‌ای؟',''],
+[98,'Y3','هفته سبک پیش‌آزمون','مرور سبک + خواب + لجستیک آزمون','—','—','چک‌لیست روز آزمون','آمادگی','خواب کافی + چک‌لیست آماده؟',''],
+[99,'Y3','هفته آزمون (آمادگی نهایی)','مرور نهایی + مدیریت استرس','—','—','شبیه‌سازی روز آزمون','آمادگی','اعتمادبه‌نفست؟',''],
+[100,'Y3','آزمون ARC 🏆','روز آزمون + ثبت تجربه','S10','—','شرکت در آزمون + یادداشت تجربه','آزمون','به خودت افتخار کن','exam'],
+[101,'Y3','استراحت + تحلیل نتیجه','ریکاوری + بررسی نتیجه/کارنامه','—','—','تحلیل کارنامه + برنامه (قبول/تکرار)','تحلیل','قدم بعدی؟','star'],
+[102,'Y3','تحقیق تخصص‌ها','کلینیکال/فرمولاتور/آموزشگر: مصاحبه و تحقیق','S10','مرور چرخشی','جدول مقایسه ۳ مسیر با معیار تو','تحقیق','کدام با تو می‌خواند؟',''],
+[103,'Y3','انتخاب تخصص + پلن','تصمیم + نقشه ۱۸ماهه تخصص','S10','—','سند انتخاب تخصص (۱ صفحه، امضاشده)','تصمیم','چرا این یکی؟','star'],
+[104,'Y3','آماده‌سازی IFPA','تحقیق مدارس accredited + انتخاب','S10','—','انتخاب مدرسه + ثبت‌نام','ثبت‌نام','اعتبار را کجا تأیید کردی؟',''],
+[105,'Y3','IFPA ماژول ۱','شروع دیپلم + روتین جدید','IFPA','مرور چرخشی','تکالیف ماژول ۱','دیپلم','ریتم جدیدت؟',''],
+[106,'Y3','IFPA ماژول ۲','ادامه + تمرین تخصصی ۱','IFPA','مرور چرخشی','تکالیف + تمرین تخصصی اول','دیپلم','پیوند ماژول و تخصص؟',''],
+[107,'Y3','IFPA ماژول ۳','ادامه + عمق','IFPA','مرور چرخشی','تکالیف ماژول ۳','دیپلم','نکته طلایی هفته؟',''],
+[108,'Y3','IFPA ماژول ۴ + تمرین ۲','ادامه + تمرین تخصصی دوم','IFPA','مرور چرخشی','تکالیف + تمرین تخصصی','دیپلم','پیشرفت تخصص؟',''],
+[109,'Y3','مرور میان‌ترم IFPA','جمع‌بندی ۴ ماژول + آزمونک مدرسه','IFPA','—','آزمونک + رفع اشکال','آزمونک','نمره‌ات؟',''],
+[110,'Y3','IFPA ماژول ۵','نیمه دوم شروع','IFPA','مرور چرخشی','تکالیف ماژول ۵','دیپلم','انرژی‌ات؟',''],
+[111,'Y3','IFPA ماژول ۶ + تمرین ۳','ادامه + تمرین تخصصی سوم','IFPA','مرور چرخشی','تکالیف + تمرین تخصصی','دیپلم','نمونه‌کار جدید؟',''],
+[112,'Y3','IFPA ماژول ۷','ادامه + شروع مستندسازی کیس‌ها','IFPA','مرور چرخشی','تکالیف + قالب کیس IFPA','دیپلم','کیس‌ها را شروع کن',''],
+[113,'Y3','کیس‌های IFPA (۱)','کیس استاندارد مدرسه ۱','IFPA','مرور چرخشی','تکمیل کیس ۱ طبق استاندارد','کیس','بازخورد مدرس؟',''],
+[114,'Y3','کیس‌های IFPA (۲)','کیس ۲ + اصلاح کیس ۱','IFPA','مرور چرخشی','کیس ۲ + نسخه دوم کیس ۱','کیس','پیشرفت کیفیت؟',''],
+[115,'Y3','IFPA ماژول ۸','ادامه ماژول‌ها','IFPA','مرور چرخشی','تکالیف ماژول ۸','دیپلم','فاصله تا پایان؟',''],
+[116,'Y3','مرور + آزمونک فاز ۵','جمع‌بندی + تست جامع','IFPA','—','آزمونک + جشن پایان فاز ۵','جشن','نمره فاز ۵؟','star'],
+[117,'Y3','IFPA ماژول ۹','ادامه + عمق بالینی','IFPA','مرور چرخشی','تکالیف ماژول ۹','دیپلم','کاربرد در تخصصت؟',''],
+[118,'Y3','کیس IFPA (۳)','کیس سوم + سوپرویژن','IFPA','مرور چرخشی','کیس ۳ + جلسه منتور','کیس','نقد منتور؟',''],
+[119,'Y3','IFPA ماژول ۱۰','ادامه','IFPA','مرور چرخشی','تکالیف ماژول ۱۰','دیپلم','نکته کلیدی؟',''],
+[120,'Y3','کیس IFPA (۴)','کیس چهارم','IFPA','مرور چرخشی','تکمیل کیس ۴','کیس','کیفیت در برابر کیس ۱؟',''],
+[121,'Y3','IFPA ماژول ۱۱','ماژول‌های پایانی','IFPA','مرور چرخشی','تکالیف ماژول ۱۱','دیپلم','نزدیک خط پایان',''],
+[122,'Y3','جمع‌بندی کیس‌ها','۴ کیس + بازخورد نهایی منتور','IFPA','—','پوشه کیس‌های نهایی','کیس','آماده دفاع؟','star'],
+[123,'Y3','مرور جامع IFPA (۱)','دور اول مرور کل دیپلم','IFPA','—','نقشه ذهنی کل دوره','مرور','حلقه‌های ضعیف؟',''],
+[124,'Y3','مرور جامع IFPA (۲)','دور دوم + تست','IFPA','—','تست جامع + رفع اشکال','مرور','آمادگی؟',''],
+[125,'Y3','Mock IFPA (تئوری)','شبیه‌سازی کتبی','IFPA','—','اجرای mock تئوری','آزمون','نمره؟',''],
+[126,'Y3','Mock IFPA (عملی)','شبیه‌سازی عملی/کیس','IFPA','—','اجرای mock عملی','آزمون','نمره؟',''],
+[127,'Y3','رفع اشکال نهایی','آخرین شکاف‌ها','IFPA','—','جزوه نهایی + خواب کافی','مرور','آرامش؟',''],
+[128,'Y3','آزمون IFPA 🏆','روز آزمون دیپلم','IFPA','—','شرکت در آزمون','آزمون','تو ساخته‌شده‌ای برای این','exam'],
+[129,'Y3','استراحت + تحلیل','ریکاوری + کارنامه','—','—','تحلیل نتیجه + برنامه','تحلیل','قدم بعدی؟','star'],
+[130,'Y3','ترجمه رسمی مدارک','مسیر ایران: ترجمه + تأییدیه‌ها','اداری','—','شروع فرآیند ترجمه رسمی','اداری','مدارک کامل؟',''],
+[131,'Y3','برنامه لانچ ۹۰روزه','نقشه ۳ماهه شروع حرفه‌ای','بیزینس','—','پلن ۹۰روزه مکتوب','پلن','شاخص موفقیت؟','star'],
+[132,'Y3','پورتفولیو نهایی (۱)','کیس‌ها: انتخاب بهترین‌ها','S4','—','گزینش + ویرایش نهایی کیس‌ها','پورتفولیو','داستان تو؟',''],
+[133,'Y3','پورتفولیو نهایی (۲)','فرمول‌ها + مدارک + بیو','S5','مرور چرخشی','پوشه نهایی + بیو حرفه‌ای','پورتفولیو','هویت حرفه‌ای‌ات؟',''],
+[134,'Y3','طراحی پیشنهاد (۱)','خدمت یا محصول اول: چی، برای کی','بیزینس','—','تعریف پیشنهاد اول (۱ صفحه)','طراحی','مشتری/مراجع اول کیست؟',''],
+[135,'Y3','طراحی پیشنهاد (۲)','قیمت + بیمه + کانال ارائه','بیزینس','—','قیمت نهایی + بیمه + کانال','طراحی','نقطه سربه‌سر؟',''],
+[136,'Y3','محتوای اعتبارساز','اولین محتوای آموزشی عمومی','آموزش','مرور چرخشی','انتشار محتوای ۱ (مقاله/ویدیو/کارگاه کوچک)','انتشار','بازخورد؟','star'],
+[137,'Y3','شبکه‌سازی','انجمن ملی + همکاران + منتور','شبکه','—','عضویت/ارتباط + ۳ گفت‌وگو','شبکه','حلقه‌ات کیست؟',''],
+[138,'Y3','چک‌لیست حقوقی مقصد','اجرای ۷قدمه کشور مقصد','حقوقی','—','تکمیل چک‌لیست حقوقی','حقوقی','ریسک باز؟',''],
+[139,'Y3','امور مالی پایه','حساب، فاکتور، مالیات، صندوق احتیاط','بیزینس','—','سیستم مالی ساده راه‌اندازی شد','مالی','اعدادت شفاف؟',''],
+[140,'Y3','مرور پیش‌لانچ','چک نهایی همه‌چیز + تمرین ارائه','—','—','تمرین ارائه خدمت/محصول (۳ بار)','تمرین','آماده‌ای؟',''],
+[141,'Y3','لانچ نرم (۱)','۳ مراجع/مشتری اول یا کارگاه آزمایشی','لانچ','—','اجرای هفته اول لانچ','لانچ','ثبت همه‌چیز!','star'],
+[142,'Y3','لانچ نرم (۲) + بازخورد','ادامه + جمع‌آوری بازخورد ساخت‌یافته','لانچ','—','فرم بازخورد + تحلیل','بازخورد','۳ اصلاح فوری؟',''],
+[143,'Y3','سیستم پیگیری','onboarding + پیگیری + یادآوری','لانچ','—','چک‌لیست پیگیری مشتری/مراجع','سیستم','نرخ بازگشت؟',''],
+[144,'Y3','تثبیت کیفیت','استانداردسازی تحویل خدمت/محصول','لانچ','—','SOP یک‌صفحه‌ای تحویل','استاندارد','کیفیت پایدار؟',''],
+[145,'Y3','برنامه CPD سال بعد','۱۵ تا ۳۰ ساعت آموزش مداوم','S10','—','تقویم CPD سال ۴','برنامه','حوزه رشد بعدی؟',''],
+[146,'Y3','مستندسازی سال','گزارش سال ۳: اعداد + درس‌ها','—','—','گزارش سالانه (خلاصه + کامل)','گزارش','به خودت نمره بده','star'],
+[147,'Y3','توسعه محتاطانه','۱ کانال یا خدمت دوم (آزمایشی)','لانچ','—','پایلوت کوچک + معیار توقف','پایلوت','معیار ادامه؟',''],
+[148,'Y3','مرور مالی ۹۰روزه','درآمد/هزینه + تصمیم ادامه/اصلاح','بیزینس','—','صورت ۹۰روزه + تصمیم مکتوب','تصمیم','ادامه، اصلاح یا توقف؟',''],
+[149,'Y3','آماده آزمون افتخاری (۱)','مرور ایمنی کل مسیر','S2','—','۱۰۰ فلش‌کارت ایمنی نهایی','مرور','۱۰۰٪؟',''],
+[150,'Y3','آماده آزمون افتخاری (۲)','مرور فرمول و شواهد','S5+S9','—','۵۰ محاسبه + ۱۰ ادعا','مرور','سرعت و دقت؟',''],
+[151,'Y3','آزمون افتخاری ۱۰۰سؤاله','شبیه‌سازی نهایی کل ۳ سال','S2','—','اجرای آزمون + کارنامه','آزمون','مقایسه با روز ۱!','exam'],
+[152,'Y3','مرور کل مسیر (۱)','فاز ۱ تا ۳: ریشه‌ها','—','مرور چرخشی','نقشه ذهنی ۳ فاز اول','مرور','چه چیزی عوض شد؟',''],
+[153,'Y3','مرور کل مسیر (۲)','فاز ۴ تا ۶: حرفه‌ای‌گری','—','مرور چرخشی','نقشه ذهنی ۳ فاز دوم','مرور','هویت حرفه‌ای تو؟',''],
+[154,'Y3','نامه به خودِ روز ۱','بازتاب + توصیه به تازه‌کارها','—','—','نامه ۱صفحه‌ای (منتشرشدنی)','بازتاب','صادقانه بنویس','star'],
+[155,'Y3','تعهد حرفه‌ای + CPD','امضای کد اخلاق شخصی + تقویم سال ۴','S10','—','سند تعهد + تقویم CPD نهایی','تعهد','امضا کن',''],
+[156,'Y3','🎓 جشن پایان + شروع فصل بعد','مرور ۱۰۹۲ روز + هدف ۳ سال بعد','—','—','جشن + سند چشم‌انداز بعدی','جشن','تو پرکتیشنری. ادامه بده 🌿','exam']
+];
+/* روغن‌های مرجع (۳۰تایی L0 تا L2) برای مرور چرخشی */
+const OILS30=['لاوندر','پرتقال شیرین','درخت چای','اکالیپتوس رادیاتا','شمعدانی','نعناع فلفلی','رزماری','لیمو','کندر','یلانگ‌یلانگ','سدر اطلس','کلاری‌سیج','برگاموت','بابونه رومی','زنجبیل','ماندارین','گریپ‌فروت','لایم تقطیری','اکالیپتوس گلوبولوس','پاین','سرو','جونیپر','فلفل سیاه','هل','میخک','وتیور','پاچولی','بابونه آلمانی','هلیکریزم','صندل'];
+/* تنوع‌دهنده ردیف‌های ثابت روزها */
+const SCAFFOLD={
+ warm:['مرور سریع جلسه قبل + بازخوانی یادداشت','کوئیز ذهنی ۳ سؤالی از جلسه قبل','بازخوانی لاگ دیروز + ۱ نکته کلیدی'],
+ log:['ثبت یافته امروز در ژورنال یادگیری (۳ خط)','ثبت ۱ جمله «امروز چه یاد گرفتم» + نمره روز','به‌روزرسانی دفتر لاگ + تیک تقویم'],
+ scent:['بویایی آگاهانه: ۳ تنفس عمیق + توصیف حسی','تست کوری: روغن را حدس بزن بعد برچسب را ببین','مقایسه دیروز و امروز: آیا بوی یکسانی حس می‌کنی؟'],
+ words:['ثبت ۳ واژه بویایی جدید در دفتر عطر','نمره شدت/ماندگاری/حس (۱ تا ۵) برای روغن هفته','۱ خاطره یا تصویر ذهنی که بو تداعی کرد، بنویس'],
+ recall:['Recall بسته-کتاب: موضوع هفته را از حفظ توضیح بده','فلش‌کارت ۱۰تایی: سریع و بدون مکث','آموزش خیالی: موضوع را انگار به یک مبتدی یاد بده'],
+ plan:['برنامه هفته بعد: ۳ هدف مشخص بنویس','بازبینی تقویم + آماده‌سازی مواد هفته بعد','نمره هفته (۱ تا ۱۰) + ۱ اصلاح برای هفته بعد'],
+ calc:['محاسبه درصد و گرم + کراس‌چک با ماشین‌حساب','چک حد پوستی در S2 + ثبت در برگه فرمول','آماده‌سازی مواد + ضدعفونی ظروف + برچسب تاریخ'],
+ make:['ساخت طبق برگه فرمول + ثبت زمان‌بندی','تست بافت/بو + یادداشت مشاهده','عکس مرحله‌ای + ثبت بچ روغن‌ها'],
+ doc:['تکمیل برگه فرمول/بلند + امضا و تاریخ','بایگانی در پوشه + پشتیبان عکس','بازبینی ایمنی نهایی (پتچ‌تست؟ برچسب؟)']
+};
+/* ═══════════ موتور پلنر آروماتراپی ═══════════ */
+const TOTAL=1092, MAXMO=8;
+const PHASES=[
+ {id:'p1',num:1,t:'فاز ۱ — ریشه‌ها',short:'ریشه‌ها',s:'روز ۱ تا ۱۱۲ · صفر ← پایه قوی (L0+L1)',d1:1,d2:112,c:'#b79cff',
+  intro:'<strong>سطح هدف:</strong> صفر مطلق ← پایه قوی (L0+L1) | <strong>بازه:</strong> ماه ۱ تا ۴ | <strong>۱۶ هفته / ۱۱۲ روز</strong></p><p><strong>خروجی فاز:</strong> پک پایه (۱۰ پروفایل + ۲۰ محاسبه + ۳ فرمول) + قبولی <strong>Gate A</strong></p><p><strong>منابع اصلی فاز:</strong> S6 (فارسی) ← S1 (گزیده) + S7 (جدول رقیق‌سازی، روزانه) + S8'},
+ {id:'p2',num:2,t:'فاز ۲ — پرکتیشنر',short:'پرکتیشنر',s:'روز ۱۱۳ تا ۲۲۴ · پایه ← سازنده (L2)',d1:113,d2:224,c:'#6fe3a5',
+  intro:'<strong>سطح هدف:</strong> پایه ← سازنده (L2) | <strong>بازه:</strong> ماه ۵ تا ۸ | <strong>۱۶ هفته / ۱۱۲ روز</strong></p><p><strong>خروجی فاز:</strong> پک پرکتیشنر (۱۵ پروفایل + ۵ فرمول وزنی + ۳ بلند + نقد محصول) + <strong>Gate B</strong></p><p><strong>منابع اصلی فاز:</strong> S2 (مرجع میز — حالا بخر) + S1 + S3 (سینرژی) + S5'},
+ {id:'p3',num:3,t:'فاز ۳ — پیشرفته',short:'پیشرفته',s:'روز ۲۲۵ تا ۳۹۲ · سازنده ← متخصص ایمنی (L3)',d1:225,d2:392,c:'#fbbf24',
+  intro:'<strong>سطح هدف:</strong> سازنده ← متخصص ایمنی (L3) | <strong>بازه:</strong> ماه ۹ تا ۱۴ | <strong>۲۴ هفته / ۱۶۸ روز</strong></p><p><strong>خروجی فاز:</strong> پک پیشرفته (۲ کیس واقعی + نقد مقاله + پروتکل جمعیت خاص + ۲ GC/MS) + <strong>Gate C</strong></p><p><strong>منابع اصلی فاز:</strong> S2 (فصل‌های سم‌شناسی) + S3 + S4 (بالینی) + S9 (پژوهش)'},
+ {id:'p4',num:4,t:'فاز ۴ — حرفه‌ای',short:'حرفه‌ای',s:'روز ۳۹۳ تا ۶۱۶ · متخصص ← پرکتیشنر مسئول (L4)',d1:393,d2:616,c:'#f9a8d4',
+  intro:'<strong>سطح هدف:</strong> متخصص ← پرکتیشنر مسئول (L4) | <strong>بازه:</strong> ماه ۱۵ تا ۲۲ | <strong>۳۲ هفته / ۲۲۴ روز</strong></p><p><strong>خروجی فاز:</strong> پورتفولیوی حرفه‌ای (۵ کیس + ۱۰ فرمول + طرح ۱صفحه‌ای) + مدرک A&amp;P + <strong>Gate D</strong></p><p><strong>منابع اصلی فاز:</strong> دوره A&amp;P + استانداردهای S10 + منتور + S2/S4 (مرجع میز)'},
+ {id:'p5',num:5,t:'فاز ۵ — گواهی و تخصص',short:'گواهی و تخصص',s:'روز ۶۱۷ تا ۸۱۲ · آزمون ARC + دیپلم IFPA',d1:617,d2:812,c:'#7dd3fc',
+  intro:'<strong>سطح هدف:</strong> آمادگی گواهی ← متخصص (انتخاب تخصص) | <strong>بازه:</strong> ماه ۲۳ تا ۲۹ | <strong>۲۸ هفته / ۱۹۶ روز</strong></p><p><strong>خروجی فاز:</strong> 🏆 مدرک RA (آزمون ARC) + شروع دیپلم IFPA + سند انتخاب تخصص</p><p><strong>منابع اصلی فاز:</strong> بانک تست ARC + سیلابس IFPA + S10'},
+ {id:'p6',num:6,t:'فاز ۶ — لانچ',short:'لانچ',s:'روز ۸۱۳ تا ۱۰۹۲ · پورتفولیو ← شروع حرفه‌ای',d1:813,d2:1092,c:'#fdba74',
+  intro:'<strong>سطح هدف:</strong> متخصص ← شاغل حرفه‌ای | <strong>بازه:</strong> ماه ۳۰ تا ۳۶ | <strong>۴۰ هفته / ۲۸۰ روز</strong></p><p><strong>خروجی فاز:</strong> 🎓 دیپلم IFPA + لانچ نرم (خدمت/محصول/کارگاه) + برنامه CPD سال ۴</p><p><strong>منابع اصلی فاز:</strong> IFPA + منتور + چک‌لیست حقوقی کشور مقصد + S10'}
+];
+const PMONTHS={
+ p1:[[1,1,4],[2,5,8],[3,9,12],[4,13,16]],
+ p2:[[5,17,20],[6,21,24],[7,25,28],[8,29,32]],
+ p3:[[9,33,36],[10,37,40],[11,41,44],[12,45,48],[13,49,52],[14,53,56]],
+ p4:[[15,57,60],[16,61,64],[17,65,68],[18,69,72],[19,73,76],[20,77,80],[21,81,84],[22,85,88]],
+ p5:[[23,89,92],[24,93,96],[25,97,100],[26,101,104],[27,105,108],[28,109,112],[29,113,116]],
+ p6:[[30,117,122],[31,123,128],[32,129,134],[33,135,140],[34,141,146],[35,147,151],[36,152,156]]
+};
+const TYPES=['LEARN','SCENT','OIL','REST','PRACTICE','REVIEW','LIGHT'];
+const TYPEDESC={LEARN:'تئوری ۷۵ دقیقه',SCENT:'بویایی ۱۵ دقیقه',OIL:'روغن ۶۰ دقیقه',REST:'استراحت ۱۰ دقیقه',PRACTICE:'عملی ۶۰ دقیقه',REVIEW:'مرور ۶۰ دقیقه',LIGHT:'سبک ۲۰ دقیقه'};
+const WBYW={}; WEEKS.forEach(function(w){WBYW[w[0]]=w});
+function oilFor(w){
+  const o=WBYW[w][5];
+  if(o && o!=='—' && o.indexOf('مرور چرخشی')!==0) return o;
+  return OILS30[(w*2)%30]+' + '+OILS30[(w*2+7)%30];
+}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function dayRows(n){
+  const w=Math.floor((n-1)/7)+1, W=WBYW[w], ty=TYPES[(n-1)%7], r=n%3;
+  const oil=oilFor(w), src=W[4]||'—', psrc=W[7]||'—';
+  const R=[];
+  function row(cat,so,task,min,out){R.push('<tr><td>'+(R.length+1)+'</td><td>'+cat+'</td><td>'+so+'</td><td>'+task+'</td><td>'+min+'</td><td>'+out+'</td></tr>')}
+  if(ty==='LEARN'){
+    row('مرور','لاگ',esc(SCAFFOLD.warm[r]),10,'کوئیز ذهنی ۳ سؤالی');
+    row('مفهوم/تئوری',esc(src),esc(W[3]),40,'یادداشت ۱ صفحه‌ای فارسی');
+    row('تثبیت','تمرین','ثبت ۳ نکته کلیدی + ۱ سؤال باز هفته',15,'۳ نکته + ۱ سؤال');
+    row('ژورنال','لاگ',esc(SCAFFOLD.log[r]),10,'۱ ردیف در ژورنال');
+  }else if(ty==='SCENT'){
+    row('بویایی','روغن هفته',esc(SCAFFOLD.scent[r])+': <strong>'+esc(oil)+'</strong>',10,'مشاهده ثبت شد');
+    row('ثبت','دفتر عطر',esc(SCAFFOLD.words[r]),5,'۳ واژه / نمره');
+  }else if(ty==='OIL'){
+    row('پروفایل',esc(src),'خواندن/تکمیل پروفایل: <strong>'+esc(oil)+'</strong>',20,'پروفایل به‌روز شد');
+    row('مقایسه بویایی','روغن‌ها','مقایسه با ۱ روغن هم‌خانواده + ثبت تفاوت',15,'جدول مقایسه');
+    row('فلش‌کارت ایمنی','S7/S2','ایمنی '+esc(oil)+' — حد، موارد منع، اکسیداسیون',15,'۵ کارت مرور شد');
+    row('ثبت','دفتر','خلاصه ۵خطی + چک تاریخ بازکردن روغن',10,'۱ ردیف + تاریخ');
+  }else if(ty==='REST'){
+    row('استراحت فعال','—','تنفس ۴-۷-۸ + بویایی آزاد دلخواه (بدون تحلیل)',10,'ذهن آرام');
+  }else if(ty==='PRACTICE'){
+    row('آماده‌سازی',esc(psrc),esc(SCAFFOLD.calc[r]),15,'اعداد + ایمنی ثبت شد');
+    row('ساخت',esc(psrc),esc(W[6]),30,'خروجی ساخته شد');
+    row('مستندسازی','برگه',esc(SCAFFOLD.doc[r]),15,'برگه کامل و بایگانی');
+  }else if(ty==='REVIEW'){
+    row('Recall','حافظه',esc(SCAFFOLD.recall[r]),20,'بدون نگاه توضیح دادی');
+    row('مرور',esc(src),'بازبینی یادداشت‌ها + فلش‌کارت‌های عقب‌افتاده',15,'صفر کارت عقب‌افتاده');
+    row('کاربرد','تمرین',esc(W[8]),15,'انجام شد');
+    row('برنامه','تقویم',esc(SCAFFOLD.plan[r]),10,'هفته بعد مشخص');
+  }else{
+    row('جبران','—','جبران مهم‌ترین عقب‌ماندگی هفته (فقط یکی)',15,'صفر/کم عقب‌ماندگی');
+    row('نمره','ژورنال','نمره هفته ۱ تا ۱۰ + ۱ جمله درس هفته',5,'ثبت شد');
+  }
+  return R.join('');
+}
+function flagNote(f){
+  if(f==='buy') return ' · 🛒 <strong>هفته خرید</strong> — فقط طبق لیست، سقف ۵ روغن';
+  if(f==='exam') return ' · 📝 <strong>هفته آزمون/گیت</strong> — ایمنی ۱۰۰٪، بدون مذاکره';
+  if(f==='star') return ' · ⭐ <strong>نقطه عطف</strong>';
+  return '';
+}
+function weekOut(W){
+  if(W[9]==='exam')return 'آزمون و عبور از گیت';
+  if(W[9]==='buy')return 'خرید فقط طبق لیست هفته';
+  if(W[9]==='star')return 'نقطه عطف + جمع‌بندی';
+  const lv=W[1];
+  if(lv==='L0')return 'لاگ روزانه + ایمنی پایه';
+  if(lv==='L1')return 'پروفایل، محاسبه، فرمول';
+  if(lv==='L2')return 'فرمول وزنی، بلند، پروفایل';
+  if(lv==='L3')return 'کیس، نقد مقاله، پروتکل';
+  if(lv==='L4')return 'پورتفولیو و A&P';
+  return 'تست، کیس، ماژول دیپلم';
+}
+function renderPhases(){
+  PHASES.forEach(function(p){
+    let h='<div class="phase-top" style="border-top-color:'+p.c+'"><button class="btn ghost" onclick="showPhases()">→ بازگشت به فهرست فازها</button>'
+      +'<div class="phase-title">'+p.t+'</div><div class="phase-range">'+p.s+'</div></div>'
+      +'<div class="monthbar"><span class="monthbar-tip">💡 برای باز/بسته کردن ماه‌ها روی عنوان هر ماه کلیک کنید</span>'
+      +'<button class="btn ghost small" onclick="setAllMonths(\''+p.id+'\', true)">➕ همه باز</button>'
+      +'<button class="btn ghost small" onclick="setAllMonths(\''+p.id+'\', false)">➖ همه بسته</button></div>'
+      +'<div class="phase-intro"><h1 class="doc-title">'+p.t+' (روزهای '+fa(p.d1)+' تا '+fa(p.d2)+')</h1><p>'+p.intro+'</p>'
+      +'<p><strong>ریتم:</strong> شنبه LEARN ۷۵′ · یکشنبه SCENT ۱۵′ · دوشنبه OIL ۶۰′ · سه‌شنبه REST ۱۰′ · چهارشنبه PRACTICE ۶۰′ · پنجشنبه REVIEW ۶۰′ · جمعه LIGHT ۲۰′.</p><hr></div>';
+    PMONTHS[p.id].forEach(function(mo,idx){
+      h+='<div class="accordion" id="'+p.id+'-acc-'+idx+'"><button class="acc-head" onclick="toggleMonth(\''+p.id+'\', '+idx+')"><span class="acc-arrow">▸</span><span class="acc-label">ماه '+fa(mo[0])+'</span><span class="acc-state">بسته</span></button><div class="acc-body">';
+      for(let w=mo[1];w<=mo[2];w++){
+        const W=WBYW[w], a=(w-1)*7+1, b=w*7;
+        h+='<h2>هفته '+fa(w)+' (ماه '+fa(mo[0])+") — «"+esc(W[2])+'» — روز '+fa(a)+' تا '+fa(b)+'</h2>';
+        h+='<blockquote><strong>منبع فعال این هفته:</strong> '+esc(W[4])+' · <strong>روغن هفته:</strong> '+esc(oilFor(w))+' · <strong>بار هفتگی:</strong> ~۵ ساعت · <strong>خروجی هفته:</strong> '+weekOut(W)+flagNote(W[9])+'</blockquote>';
+        for(let n=a;n<=b;n++){
+          const ty=TYPES[(n-1)%7];
+          h+='<h3>روز '+fa(n)+' (هفته '+fa(w)+') — '+dowOf(n)+' — نوع: '+ty+' ('+TYPEDESC[ty]+')</h3>';
+          h+='<table><thead><tr><th>#</th><th>دسته</th><th>منبع</th><th>وظیفه</th><th>مدت (دقیقه)</th><th>خروجی/معیار موفقیت</th></tr></thead><tbody>'+dayRows(n)+'</tbody></table>';
+        }
+      }
+      h+='</div></div>';
+    });
+    document.getElementById('view-'+p.id).innerHTML=h;
+  });
+}
+/* ── ناوبری پایه ── */
+function showView(id){
+  document.querySelectorAll('.view').forEach(function(v){v.classList.remove('active')});
+  const el=document.getElementById(id);
+  if(el){el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+}
+function showHome(){showView('view-home')}
+function showResources(){showView('view-resources')}
+function showMacro(){showView('view-macro')}
+function showPhases(){showView('view-phases')}
+function toggleMonth(pid,val){
+  const acc=document.getElementById(pid+'-acc-'+val);
+  if(!acc)return;
+  acc.classList.toggle('open');
+  const st=acc.querySelector('.acc-state'); if(st){st.textContent=acc.classList.contains('open')?'باز':'بسته'}
+}
+function setAllMonths(pid,openAll){
+  document.querySelectorAll('[id^="'+pid+'-acc-"]').forEach(function(p){
+    if(openAll){p.classList.add('open')}else{p.classList.remove('open')}
+    const st=p.querySelector('.acc-state'); if(st){st.textContent=openAll?'باز':'بسته'}
+  });
+}
+/* ── تقویم ── */
+const FAM=['فروردین','اردیبهشت','خرداد','تیر','مرداد','شهریور','مهر','آبان','آذر','دی','بهمن','اسفند'];
+const DOW=['شنبه','یکشنبه','دوشنبه','سه‌شنبه','چهارشنبه','پنج‌شنبه','جمعه'];
+const GM=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function jLeap(y){const b=[1,5,9,13,17,22,26,30];return b.includes(((y-474)%2820+2820)%2820%33)}
+function jDIM(y,m){return m<=6?31:(m<=11?30:(jLeap(y)?30:29))}
+function j2g(jy,jm,jd){
+  let gy=jy>979?1600:621,jy2=jy>979?jy-979:jy;
+  let days=365*jy2+((jy2/33)|0)*8+(((jy2%33)+3)/4|0)+78+jd+(jm<7?(jm-1)*31:((jm-7)*30)+186);
+  gy+=400*((days/146097)|0); days%=146097;
+  if(days>36524){gy+=100*((--days/36524)|0);days%=36524;if(days>=365)days++}
+  gy+=4*((days/1461)|0); days%=1461;
+  if(days>365){gy+=((days-1)/365)|0;days=(days-1)%365}
+  let gd=days+1;
+  const sal=[0,31,(gy%4==0&&gy%100!=0)||gy%400==0?29:28,31,30,31,30,31,31,30,31,30,31];
+  let gm=0; for(gm=1;gm<=12;gm++){if(gd<=sal[gm])break;gd-=sal[gm]}
+  return new Date(gy,gm-1,gd);
+}
+function g2j(dt){
+  const gy=dt.getFullYear(),gm=dt.getMonth()+1,gd=dt.getDate();
+  const gdm=[0,31,59,90,120,151,181,212,243,273,304,334];
+  let gy2=gy-1600,gm2=gm-1,gd2=gd-1;
+  let n=365*gy2+((gy2+3)/4|0)-((gy2+99)/100|0)+((gy2+399)/400|0)+gdm[gm2]+gd2;
+  if(gm2>1&&((gy%4==0&&gy%100!=0)||gy%400==0))n++;
+  n-=79; const np=(n/12053)|0; n%=12053;
+  let jy=979+33*np+4*((n/1461)|0); n%=1461;
+  if(n>=366){jy+=((n-1)/365)|0;n=(n-1)%365}
+  for(let k=0;k<11;k++){const md=k<6?31:30;if(n<md)return[jy,k+1,n+1];n-=md}
+  return[jy,12,n+1];
+}
+function toNum(s){s=String(s);if(/[۰-۹]/.test(s))s=s.replace(/[۰-۹]/g,function(c){return '۰۱۲۳۴۵۶۷۸۹'.indexOf(c)});return parseInt(s,10)}
+function fa(x){return String(x).replace(/[0-9]/g,function(c){return '۰۱۲۳۴۵۶۷۸۹'[c]})}
+const Store=(function(){
+  const mem={}; let ok=true;
+  try{localStorage.setItem('__ar_t','1');localStorage.removeItem('__ar_t')}catch(e){ok=false}
+  return{
+    get:function(k){if(ok){try{return localStorage.getItem(k)}catch(e){}}return (k in mem)?mem[k]:null},
+    set:function(k,v){mem[k]=String(v);if(ok){try{localStorage.setItem(k,v)}catch(e){}}},
+    keys:function(p){const out=[];if(ok){try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(p&&k.indexOf(p)===0)out.push(k)}}catch(e){}}for(const k in mem)if(p&&k.indexOf(p)===0&&out.indexOf(k)<0)out.push(k);return out}
+  };
+})();
+let TOFF=+(Store.get('ar_toff')||0);
+function NOW(){return new Date(Date.now()+TOFF)}
+function defaultStart(){const d=new Date();d.setDate(d.getDate()+((6-d.getDay())+7)%7);const a=g2j(d);return{y:a[0],m:a[1],d:a[2]}}
+let SD=JSON.parse(Store.get('ar_start')||'null')||defaultStart();
+let WS=+(Store.get('ar_wstart')||0);
+function startDate(){return j2g(SD.y,SD.m,SD.d)}
+function dateOf(n){const d=new Date(startDate());d.setDate(d.getDate()+n-1);return d}
+function gstr(n){const g=dateOf(n);return g.getDate()+' '+GM[g.getMonth()]+' '+g.getFullYear()}
+function todayPlanDay(){const t=Math.floor((NOW()-startDate())/864e5)+1;return t<1?1:(t>TOTAL?TOTAL:t)}
+function phaseOfDay(n){return PHASES.find(function(p){return n>=p.d1&&n<=p.d2})||PHASES[0]}
+let activeDay=+(Store.get('ar_day')||0);
+if(!(activeDay>=1&&activeDay<=TOTAL))activeDay=todayPlanDay();
+let curPhase=phaseOfDay(activeDay).id;
+const savedView=Store.get('ar_view')||'view-home';
+function saveState(){Store.set('ar_day',activeDay);Store.set('ar_start',JSON.stringify(SD));Store.set('ar_wstart',WS)}
+function parseDayH3(h){
+  const m=h.textContent.match(/^(روز\s*[۰-۹\d]+\s*\(هفته\s*[۰-۹\d]+\)\s*—\s*)([^\s—]+)(\s*—\s*نوع:\s*([^\s]+).*)$/);
+  if(!m)return null;
+  return{n:toNum(m[1].match(/روز\s*([۰-۹\d]+)/)[1]),w:toNum(m[1].match(/هفته\s*([۰-۹\d]+)/)[1]),head:m[1],tail:m[3],type:m[4]||''};
+}
+function dowOf(n){return DOW[(dateOf(n).getDay()+1+WS)%7]}
+function rewriteDowNames(){
+  document.querySelectorAll('h3').forEach(function(h){
+    const m=parseDayH3(h);
+    if(m)h.textContent=m.head+dowOf(m.n)+m.tail;
+  });
+}
+let WEEK=null;
+function buildWeekCache(){const c=new Array(TOTAL+1);
+  document.querySelectorAll('h3').forEach(function(h){const d=parseDayH3(h);if(d&&!c[d.n])c[d.n]=d.w});
+  return c}
+function weekOfDay(n){if(!WEEK)WEEK=buildWeekCache();return WEEK[n]||1}
+function weeksOfMonth(pid,idx){
+  const acc=document.getElementById(pid+'-acc-'+idx);
+  if(!acc)return[];
+  const map={};
+  acc.querySelectorAll('h3').forEach(function(h){
+    const d=parseDayH3(h);
+    if(d){if(!map[d.w])map[d.w]={w:d.w,first:d.n,last:d.n};else{if(d.n<map[d.w].first)map[d.w].first=d.n;if(d.n>map[d.w].last)map[d.w].last=d.n}}
+  });
+  return Object.keys(map).map(Number).sort(function(a,b){return a-b}).map(function(w){return map[w]});
+}
+function monthOfPhase(pid,idx){
+  const acc=document.getElementById(pid+'-acc-'+idx);
+  if(!acc)return null;
+  let first=null,last=null;
+  acc.querySelectorAll('h3').forEach(function(h){
+    const m=parseDayH3(h);
+    if(m){if(first===null||m.n<first)first=m.n;if(last===null||m.n>last)last=m.n}
+  });
+  if(first===null)return null;
+  return{idx:idx,first:first,last:last};
+}
+function monthIndexOf(pid,n){
+  for(let i=0;i<MAXMO;i++){const m=monthOfPhase(pid,i);if(m&&n>=m.first&&n<=m.last)return i+1}
+  return 1;
+}
+function globalMonth(pid,n){
+  for(let i=0;i<MAXMO;i++){
+    const m=monthOfPhase(pid,i);
+    if(m&&n>=m.first&&n<=m.last){
+      const a=document.getElementById(pid+'-acc-'+i);
+      const t=a?(a.querySelector('.acc-label')||{}).textContent:'';
+      const g=t?toNum(t.replace(/[^۰-۹0-9]/g,'')):0;
+      return g||(i+1);
+    }
+  }
+  return 1;
+}
+function jalaliStr(g){const a=g2j(g);return fa(a[2])+' '+FAM[a[1]-1]+' '+fa(a[0])}
+function renderHeader(){
+  const n=activeDay, gdt=dateOf(n), jd=g2j(gdt), t=todayPlanDay(), isT=(n===t), p=phaseOfDay(n);
+  dn.innerHTML='روز '+fa(n);
+  let l2='فاز '+fa(p.num)+' — '+p.short;
+  if(!isT)l2+=' · امروز: '+jalaliStr(NOW());
+  dm.innerHTML='<div class="cal'+(isT?' today':'')+'">'+(isT?'<span class="tdb">امروز</span>':'')
+    +'<span class="cd">'+fa(jd[2])+'</span>'
+    +'<span class="cx"><span><span class="cm">'+FAM[jd[1]-1]+'</span><span class="cw">'+dowOf(n)+'</span></span>'
+    +'<span class="cy">'+fa(jd[0])+'</span><span class="cg">'+gstr(n)+'</span></span></div><span class="l2">'+l2+'</span>';
+  bph.innerHTML='<span class="pv">فاز '+fa(p.num)+'</span><span class="ar">▾</span>';
+  bmo.innerHTML='<span class="pv">ماه '+fa(globalMonth(p.id,n))+'</span><span class="ar">▾</span>';
+  bwk.innerHTML='<span class="pv">هفته '+fa(weekOfDay(n))+'</span><span class="ar">▾</span>';
+  bday.innerHTML='<span class="pv">روز '+fa(n)+'</span><span class="ar">▾</span>';
+  const pcv=n/TOTAL*100;
+  pb.style.width=pcv+'%';
+  ppc.textContent=fa(pcv.toFixed(1))+'٪';
+  stats();
+}
+function setupTaskChecks(){
+  document.querySelectorAll('.acc-body h3').forEach(function(h){
+    const d=parseDayH3(h);
+    if(!d)return;
+    const tb=h.nextElementSibling;
+    if(!tb||tb.tagName!=='TABLE')return;
+    tb._h3=h;
+    let idx=0;
+    tb.querySelectorAll('tr').forEach(function(tr){
+      if(tr.querySelectorAll('td').length<5||tr.querySelector('.tdchk'))return;
+      const key='ar_d'+d.n+'_'+idx; idx++;
+      const c=document.createElement('td');
+      c.className='tdchk';
+      c.innerHTML='<span class="tk">✓</span>';
+      tr.insertBefore(c,tr.firstChild);
+      tr.dataset.k=key;
+      if(Store.get(key)==='1')tr.classList.add('done');
+      tr.style.cursor='pointer';
+      tr.addEventListener('click',function(){toggleTask(tr)});
+    });
+    updateDayState(tb);
+  });
+}
+function updateDayState(tb){
+  const rows=tb.querySelectorAll('tr[data-k]');
+  let done=0;
+  for(let k=0;k<rows.length;k++)if(rows[k].classList.contains('done'))done++;
+  if(tb._h3){
+    tb._h3.classList.toggle('daydone',rows.length>0&&done===rows.length);
+    tb._h3.classList.toggle('daypart',done>0&&done<rows.length);
+  }
+}
+function toggleTask(tr){
+  const on=Store.get(tr.dataset.k)==='1';
+  Store.set(tr.dataset.k,on?'0':'1');
+  tr.classList.toggle('done',!on);
+  updateDayState(tr.closest('table'));
+  refreshCascade();
+  stats();
+}
+function clearTasks(){
+  if(!confirm('همه تیک‌های انجام‌شده پاک شود؟'))return;
+  document.querySelectorAll('tr[data-k]').forEach(function(tr){Store.set(tr.dataset.k,'0');tr.classList.remove('done')});
+  document.querySelectorAll('.acc-body table').forEach(function(t){updateDayState(t)});
+  refreshCascade();
+  stats();
+}
+const PHASEDONE={};
+const PCARDMAP={};
+function refreshCascade(){
+  PHASES.forEach(function(p){
+    let months=0,monthsDone=0;
+    for(let i=0;i<MAXMO;i++){
+      const acc=document.getElementById(p.id+'-acc-'+i);
+      if(!acc)continue;
+      months++;
+      const body=acc.querySelector('.acc-body');
+      const weeks=[];let cur=null;
+      if(body)[].slice.call(body.children).forEach(function(ch){
+        if(ch.tagName==='H2'){cur={h2:ch,days:[]};weeks.push(cur)}
+        else if(ch.tagName==='H3'&&cur)cur.days.push(ch);
+      });
+      let weeksDone=0;
+      weeks.forEach(function(w){
+        let all=w.days.length>0;
+        w.days.forEach(function(h){if(!h.classList.contains('daydone'))all=false});
+        if(w.h2)w.h2.classList.toggle('weekdone',all);
+        if(all)weeksDone++;
+      });
+      const md=weeks.length>0&&weeksDone===weeks.length;
+      acc.classList.toggle('monthdone',md);
+      if(md)monthsDone++;
+    }
+    const pd=months>0&&monthsDone===months;
+    PHASEDONE[p.id]=pd;
+    if(PCARDMAP[p.id])PCARDMAP[p.id].forEach(function(c){c.classList.toggle('pcard-done',pd)});
+  });
+}
+function stats(){
+  let n=0,total=0;
+  document.querySelectorAll('tr[data-k]').forEach(function(tr){total++;if(tr.classList.contains('done'))n++});
+  const p=phaseOfDay(activeDay);
+  st.textContent='فاز '+fa(p.num)+' · ✅ '+fa(n)+'/'+fa(total);
+}
+function gotoView(id){showView(id)}
+function pickPh(){dPh.showModal();fillPh()}
+function pickMo(){dMo.showModal();fillMo()}
+function pickWk(){dWk.showModal();fillWk()}
+function buildBackupData(){
+  const data={app:'aroma-planner',version:1,exportedAt:new Date().toISOString(),keys:{}};
+  Store.keys('ar_').forEach(function(k){data.keys[k]=Store.get(k)});
+  return JSON.stringify(data,null,2);
+}
+function exportBackup(){
+  document.getElementById('expTxt').value=buildBackupData();
+  document.getElementById('expMsg').textContent='';
+  const fn=document.getElementById('expFname');
+  if(fn)fn.textContent='AR-backup-'+jalaliStamp()+'.json';
+  try{dlBackup()}catch(e){}
+  dExp.showModal();
+}
+function jalaliStamp(){
+  const a=g2j(new Date());
+  function p(x){return x<10?'0'+x:''+x}
+  return a[0]+'-'+p(a[1])+'-'+p(a[2]);
+}
+function dlBackup(){
+  try{
+    const txt=document.getElementById('expTxt').value;
+    const blob=new Blob([txt],{type:'application/json'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url;
+    a.download='AR-backup-'+jalaliStamp()+'.json';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function(){URL.revokeObjectURL(url);a.remove()},800);
+  }catch(e){
+    const m=document.getElementById('expMsg');
+    if(m){m.textContent='⚠️ دانلود در این محیط ممکن نیست — از کپی استفاده کنید';m.className='bmsg err'}
+  }
+}
+function copyBackup(){
+  const ta=document.getElementById('expTxt');
+  const m=document.getElementById('expMsg');
+  ta.focus();ta.select();
+  try{ta.setSelectionRange(0,ta.value.length)}catch(e){}
+  let done=false;
+  try{
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(ta.value).then(function(){if(m){m.textContent='✅ کپی شد — آن را در یک فایل .json ذخیره کنید';m.className='bmsg'}}).catch(function(){});
+    }
+  }catch(e){}
+  try{done=document.execCommand('copy')}catch(e){}
+  if(done&&m){m.textContent='✅ کپی شد — آن را در یک فایل .json ذخیره کنید';m.className='bmsg'}
+}
+function importBackup(){
+  document.getElementById('impTxt').value='';
+  document.getElementById('impMsg').textContent='';
+  const inp=document.getElementById('impFile2');
+  inp.value='';
+  inp.onchange=function(){
+    const f=inp.files&&inp.files[0];
+    if(!f)return;
+    const rd=new FileReader();
+    rd.onload=function(){applyBackupJson(rd.result)};
+    rd.onerror=function(){
+      const m=document.getElementById('impMsg');
+      if(m){m.textContent='⚠️ خواندن فایل ممکن نشد';m.className='bmsg err'}
+    };
+    rd.readAsText(f);
+  };
+  dImp.showModal();
+}
+function applyImportText(){
+  const txt=document.getElementById('impTxt').value.trim();
+  if(!txt){
+    const m=document.getElementById('impMsg');
+    if(m){m.textContent='متن بکاپ را وارد کنید';m.className='bmsg err'}
+    return;
+  }
+  applyBackupJson(txt);
+}
+function applyBackupJson(txt){
+  const m=document.getElementById('impMsg');
+  try{
+    const data=JSON.parse(txt);
+    if(!data||!data.keys||typeof data.keys!=='object')throw new Error('bad');
+    let n=0;
+    Object.keys(data.keys).forEach(function(k){
+      if(k.indexOf('ar_')===0){Store.set(k,String(data.keys[k]));n++}
+    });
+    TOFF=+(Store.get('ar_toff')||0);
+    SD=JSON.parse(Store.get('ar_start')||'null')||defaultStart();
+    WS=+(Store.get('ar_wstart')||0);
+    activeDay=+(Store.get('ar_day')||0);
+    if(!(activeDay>=1&&activeDay<=TOTAL))activeDay=todayPlanDay();
+    curPhase=phaseOfDay(activeDay).id;
+    WEEK=null;
+    rewriteDowNames();
+    document.querySelectorAll('tr[data-k]').forEach(function(tr){
+      tr.classList.toggle('done',Store.get(tr.dataset.k)==='1');
+    });
+    document.querySelectorAll('.acc-body table').forEach(function(t){updateDayState(t)});
+    refreshCascade();
+    renderHeader();
+    try{document.getElementById('dImp').close()}catch(e){}
+    if(m){m.textContent='';m.className='bmsg'}
+    const s=document.getElementById('syn');
+    if(s){s.textContent='✅ بکاپ وارد شد ('+n+' مورد)';setTimeout(function(){s.textContent=''},4000)}
+  }catch(e){
+    if(m){m.textContent='⚠️ فایل بکاپ معتبر نیست';m.className='bmsg err'}
+  }
+}
+function fillPh(){
+  const t=todayPlanDay();
+  let h='<div class="fhead"><span>روی هر فاز بزنید تا فقط همان فاز نمایش داده شود</span></div>';
+  PHASES.forEach(function(p){
+    let pc=0;
+    if(t>=p.d1&&t<=p.d2)pc=Math.round((t-p.d1+1)/(p.d2-p.d1+1)*100);
+    else if(t>p.d2)pc=100;
+    const cur=(p.id===curPhase), ful=PHASEDONE[p.id];
+    h+='<div class="prow'+(cur?' cur':'')+(ful?' prow-done':'')+'" onclick="openPhase(\''+p.id+'\');dPh.close()">'
+      +'<div class="pid" style="background:'+p.c+'">'+fa(p.num)+'</div>'
+      +'<div style="flex:1;min-width:0"><div class="pnm">'+p.t+(ful?' ✓':'')+'</div>'
+      +'<div class="psub">'+p.s+'</div><div class="pbar"><i style="width:'+pc+'%"></i></div>'
+      +'<div class="psub">'+fa(pc)+'٪ پیشرفت تا امروز</div></div>'
+      +(cur?'<div style="color:var(--green);font-weight:800">✓</div>':'')+'</div>';
+  });
+  dcPh.innerHTML=h;
+}
+function fillMo(){
+  const pp=PHASES.find(function(x){return x.id===curPhase})||PHASES[0];
+  let h='<div class="fhead"><span>🔍 ماه‌های '+pp.t+'</span></div><div class="grid">';
+  for(let i=0;i<MAXMO;i++){
+    const m=monthOfPhase(pp.id,i);
+    if(!m)continue;
+    const cur=(activeDay>=m.first&&activeDay<=m.last);
+    const _acc=document.getElementById(pp.id+'-acc-'+i);
+    const _lb=_acc?(_acc.querySelector('.acc-label')||{}).textContent:null;
+    const _nm=_lb?_lb.trim():('ماه '+fa(i+1));
+    h+='<button class="gi'+(cur?' cur':'')+'" onclick="gotoMonth(\''+pp.id+'\','+i+')">'
+      +'<b>'+_nm+'</b><span>روز '+fa(m.first)+'–'+fa(m.last)+'</span></button>';
+  }
+  h+='</div>';
+  dcMo.innerHTML=h;
+}
+function fillWk(){
+  const pp=PHASES.find(function(x){return x.id===curPhase})||PHASES[0];
+  const mo=monthIndexOf(pp.id,activeDay);
+  const weeks=weeksOfMonth(pp.id,mo-1);
+  if(!weeks.length)return;
+  let h='<div class="fhead"><span>🔍 هفته‌های ماه '+fa(globalMonth(pp.id,activeDay))+' · '+pp.t+'</span></div><div class="grid">';
+  weeks.forEach(function(we){
+    const cur=(activeDay>=we.first&&activeDay<=we.last);
+    h+='<button class="gi'+(cur?' cur':'')+'" onclick="gotoWeek(\''+pp.id+'\','+(mo-1)+','+we.w+')">'
+      +'<b>هفته '+fa(we.w)+'</b><span>روز '+fa(we.first)+'–'+fa(we.last)+'</span></button>';
+  });
+  h+='</div>';
+  dcWk.innerHTML=h;
+}
+function pickDay(){dDay.showModal();fillDay()}
+function fillDay(){
+  const w=weekOfDay(activeDay);
+  const pp=PHASES.find(function(x){return x.id===curPhase})||PHASES[0];
+  const days=[];
+  for(let i=0;i<MAXMO;i++){
+    const acc=document.getElementById(pp.id+'-acc-'+i);
+    if(!acc)continue;
+    acc.querySelectorAll('h3').forEach(function(h){
+      const d=parseDayH3(h);
+      if(d&&d.w===w)days.push(d);
+    });
+  }
+  days.sort(function(a,b){return a.n-b.n});
+  if(!days.length)return;
+  const mo=globalMonth(pp.id,days[0].n);
+  let h='<div class="fhead"><span>🔍 روزهای هفته '+fa(w)+' · ماه '+fa(mo)+' · '+pp.t+'</span></div><div class="grid">';
+  days.forEach(function(d){
+    const cur=(d.n===activeDay);
+    h+='<button class="gi'+(cur?' cur':'')+'" onclick="gotoDay('+d.n+');dDay.close()">'
+      +'<b>روز '+fa(d.n)+'</b><span>'+dowOf(d.n)+'</span>'+(d.type?'<small>'+d.type+'</small>':'')+'</button>';
+  });
+  h+='</div>';
+  dcDay.innerHTML=h;
+}
+function openPhase(pid){
+  const p=PHASES.find(function(x){return x.id===pid})||PHASES[0];
+  curPhase=p.id;activeDay=p.d1;saveState();
+  showView('view-'+pid);
+  renderHeader();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function openAccordion(pid,val){
+  document.querySelectorAll('[id^="'+pid+'-acc-"]').forEach(function(p){
+    p.classList.remove('open');
+    const st=p.querySelector('.acc-state');if(st)st.textContent='بسته';
+  });
+  const acc=document.getElementById(pid+'-acc-'+val);
+  if(acc){acc.classList.add('open');const st=acc.querySelector('.acc-state');if(st)st.textContent='باز'}
+}
+function gotoMonth(pid,idx){
+  const m=monthOfPhase(pid,idx);
+  if(!m)return;
+  curPhase=pid;activeDay=m.first;saveState();
+  showView('view-'+pid);
+  openAccordion(pid,idx);
+  renderHeader();
+  dMo.close();
+  const acc=document.getElementById(pid+'-acc-'+idx);
+  if(acc)acc.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function gotoWeek(pid,idx,w){
+  const weeks=weeksOfMonth(pid,idx);
+  const we=weeks.find(function(x){return x.w===w});
+  if(!we)return;
+  curPhase=pid;activeDay=we.first;saveState();
+  showView('view-'+pid);
+  openAccordion(pid,idx);
+  renderHeader();
+  dWk.close();
+  setTimeout(function(){
+    document.querySelectorAll('h3').forEach(function(h){
+      const d=parseDayH3(h);
+      if(d&&d.n===we.first)h.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  },120);
+}
+function gotoDay(n){
+  n=Math.max(1,Math.min(TOTAL,n));
+  activeDay=n;
+  const p=phaseOfDay(n);
+  curPhase=p.id;saveState();
+  showView('view-'+p.id);
+  for(let i=0;i<MAXMO;i++){const m=monthOfPhase(p.id,i);if(m&&n>=m.first&&n<=m.last){openAccordion(p.id,i);break}}
+  renderHeader();
+  setTimeout(function(){
+    document.querySelectorAll('h3').forEach(function(h){
+      const d=parseDayH3(h);
+      if(d&&d.n===n)h.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  },120);
+}
+function goToday(){gotoDay(todayPlanDay())}
+function jump(){const v=toNum(ji.value);if(v>=1&&v<=TOTAL)gotoDay(v);ji.value=''}
+for(let y=1404;y<=1414;y++)sY.add(new Option(fa(y),y));
+for(let m=1;m<=12;m++)sM.add(new Option(FAM[m-1],m));
+function fillDays(){const n=jDIM(+sY.value,+sM.value),k=+sD.value||SD.d;
+  sD.innerHTML='';for(let d=1;d<=n;d++)sD.add(new Option(fa(d),d));
+  sD.value=Math.min(k,n)}
+sY.onchange=sM.onchange=fillDays;
+function openSet(){sY.value=SD.y;sM.value=SD.m;fillDays();sD.value=SD.d;sW.value=WS;dSet.showModal()}
+function saveSet(){
+  SD={y:+sY.value,m:+sM.value,d:+sD.value};WS=+sW.value;
+  saveState();
+  rewriteDowNames();
+  dSet.close();renderHeader();
+  alert('✅ تقویم بازمحاسبه شد.\nروز ۱: '+fa(SD.d)+' '+FAM[SD.m-1]+' '+fa(SD.y)+' ('+dowOf(1)+')');
+}
+function setStartToday(){
+  const a=g2j(new Date());
+  SD={y:a[0],m:a[1],d:a[2]};WS=0;
+  saveState();
+  rewriteDowNames();
+  dSet.close();renderHeader();
+  alert('✅ تاریخ شروع به امروز تنظیم شد.\nروز ۱: '+fa(SD.d)+' '+FAM[SD.m-1]+' '+fa(SD.y)+' ('+dowOf(1)+')');
+}
+[['dPh'],['dMo'],['dWk'],['dDay'],['dSet'],['dExp'],['dImp']].forEach(function(x){
+  document.getElementById(x[0]).addEventListener('click',function(e){if(e.target===document.getElementById(x[0]))document.getElementById(x[0]).close()});
+});
+function syncTime(){
+  if(!navigator.onLine)return;
+  const t0=Date.now();
+  fetch('https://worldtimeapi.org/api/timezone/Asia/Tehran',{cache:'no-store'})
+    .then(function(r){return r.json()})
+    .then(function(j){
+      const srv=new Date(j.datetime).getTime();
+      const lat=(Date.now()-t0)/2;
+      const off=srv+lat-Date.now();
+      if(Math.abs(off)>60000){
+        TOFF=off;Store.set('ar_toff',off);
+        renderHeader();
+        const s=document.getElementById('syn');
+        if(s){s.textContent='✓ تاریخ همگام شد';setTimeout(function(){s.textContent=''},3000)}
+      }else{TOFF=0;Store.set('ar_toff',0)}
+    })
+    .catch(function(){
+      fetch('https://timeapi.io/api/Time/current/zone?timeZone=Asia/Tehran',{cache:'no-store'})
+        .then(function(r){return r.json()})
+        .then(function(j){
+          const srv=new Date(j.dateTime).getTime();
+          const off=srv-Date.now();
+          if(Math.abs(off)>60000){TOFF=off;Store.set('ar_toff',off);renderHeader()}
+        }).catch(function(){});
+    });
+}
+(function(){
+  const b=document.createElement('button');
+  b.className='totop';
+  b.title='بازگشت به اول صفحه';
+  b.setAttribute('aria-label','بازگشت به بالا');
+  b.onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};
+  document.body.appendChild(b);
+  function onScroll(){
+    const y=window.scrollY||document.documentElement.scrollTop||0;
+    b.classList.toggle('show',y>320);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+})();
+(function(){
+  const _sv=window.showView;
+  window.showView=function(id){if(typeof _sv==='function')_sv(id);Store.set('ar_view',id)};
+})();
+let stT=null;
+window.addEventListener('scroll',function(){
+  if(stT)clearTimeout(stT);
+  stT=setTimeout(function(){
+    const v=document.querySelector('.view.active');
+    if(v&&v.id!=='view-home')Store.set('ar_scroll_'+v.id,String(window.scrollY||document.documentElement.scrollTop||0));
+  },250);
+},{passive:true});
+window.addEventListener('pagehide',function(){
+  saveState();
+  const v=document.querySelector('.view.active');
+  if(v&&v.id!=='view-home'){Store.set('ar_view',v.id);Store.set('ar_scroll_'+v.id,String(window.scrollY||document.documentElement.scrollTop||0))}
+});
+function restoreState(){
+  const v=savedView;
+  if(v==='view-home'||!document.getElementById(v))return;
+  showView(v);
+  const p=PHASES.find(function(x){return 'view-'+x.id===v});
+  if(p){
+    const day=Math.max(1,Math.min(TOTAL,activeDay));
+    for(let i=0;i<MAXMO;i++){const m=monthOfPhase(p.id,i);if(m&&day>=m.first&&day<=m.last){openAccordion(p.id,i);break}}
+  }
+  const sc=parseInt(Store.get('ar_scroll_'+v)||'0',10);
+  setTimeout(function(){
+    if(sc>0)window.scrollTo(0,sc);
+    else if(p){
+      document.querySelectorAll('h3').forEach(function(h){
+        const d=parseDayH3(h);
+        if(d&&d.n===activeDay)h.scrollIntoView({block:'start'});
+      });
+    }
+  },80);
+}
+function init(){
+  try{
+    const VER='1';
+    if(Store.get('ar_ver')!==VER){
+      const hasTicks=Store.keys('ar_d').length>0;
+      if(!hasTicks){SD=defaultStart();WS=0;activeDay=1;curPhase=phaseOfDay(1).id;saveState()}
+      Store.set('ar_ver',VER);
+    }
+  }catch(e){}
+  document.querySelectorAll('.pcard').forEach(function(c){
+    const m=(c.getAttribute('onclick')||'').match(/openPhase\('(p\d)'\)/);
+    if(m){if(!PCARDMAP[m[1]])PCARDMAP[m[1]]=[];PCARDMAP[m[1]].push(c)}
+  });
+  renderPhases();
+  rewriteDowNames();
+  setupTaskChecks();
+  refreshCascade();
+  renderHeader();
+  setTimeout(syncTime,1200);
+  setInterval(function(){if(navigator.onLine)syncTime()},6*3600*1000);
+  window.addEventListener('online',syncTime);
+  ji.addEventListener('keydown',function(e){if(e.key==='Enter')jump()});
+}
+window.addEventListener('load',function(){restoreState()});
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+</script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a35ff44a2e35c100',t:'MTc4ODU1NTk0Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
